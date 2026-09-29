@@ -263,7 +263,7 @@ const taskGroups = [
                         ["Ambition", "1", "8"]
                     ]
                 },
-                correctAnswer: "Nein, zum zweiten Date",
+                correctAnswer: "Nein, kein zweites Date",
             },
             {
                 variantId: "speed_dating_10",
@@ -287,7 +287,7 @@ const taskGroups = [
                         ["Ambition", "7", "6"]
                     ]
                 },
-                correctAnswer: "Nein, zum zweiten Date",
+                correctAnswer: "Nein, kein zweites Date",
             }
         ]
     },
