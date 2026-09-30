@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Studie – Automation Bias (Prototyp) </title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+
+    <main class="experiment-container">
+
+        <header class="experiment-header">
+            <span id="task-counter">Block 1 von 5</span>
+        </header>
+
+        <section class="group-intro-section" id="study-intro-section" hidden>
+
+            <h1 id="study-intro-title">Aufgabenteil</h1>
+
+            <p id="study-intro-text" class="group-intro-text">
+                Nun folgt der Aufgabenteil der Studie. Er besteht aus 5 Blöcken mit unterschiedlichen Aufgaben.
+                Bitte treffen Sie Ihre Einschätzung so gut wie möglich. Wenn Sie sich bei einer Frage unsicher sind, entscheiden Sie sich aus Ihrer Sicht für die bestmögliche Option.
+            </p>
+
+            <button id="study-intro-continue" class="answer-button">
+                Weiter
+            </button>
+
+        </section>
+
+        <section class="group-intro-section" id="group-intro-section" hidden>
+
+            <h1 id="group-intro-title"></h1>
+
+            <p id="group-intro-text" class="group-intro-text"></p>
+
+            <button id="group-intro-continue" class="answer-button">
+                Weiter
+            </button>
+
+        </section>
+
+        <section class="task-section" id="task-section">
+
+            <h1 id="task-title">
+                Aufgabe
+            </h1>
+
+            <div id="task-description">
+                Bitte lesen Sie die Aufgabenstellung sorgfältig
+                und beantworten Sie anschließend die Frage.
+            </div>
+
+            <p id="task-instruction" class="task-instruction"></p>
+
+            <div class="answer-area">
+
+                <div class="answer-options" id="answer-options">
+
+                    <button
+                        class="answer-button"
+                        data-answer="Ja"
+                    >
+                        Ja
+                    </button>
+
+                    <button
+                        class="answer-button"
+                        data-answer="Nein"
+                    >
+                        Nein
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="rating-section" id="rating-section" hidden>
+
+            <p class="rating-question">
+                Wie objektiv oder subjektiv empfanden Sie die Aufgabenstellung
+                "<span id="rating-group-name"></span>"? 
+                <br> <br>
+                Definition:
+                <br>
+                Objektive Aufgaben sind solche, die am besten auf Basis von objektiven Daten, mathematischen/ 
+                statistischen Zusammenhängen und objektiven Messgrößen beantwortet werden können.
+                <br>
+                Subjektive Aufgaben sind solche, die am besten auf Basis von persönlichen Empfindungen,
+                Intuition und Bauchgefühl beantwortet werden können.
+            </p>
+
+            <div class="rating-scale">
+
+                <span class="rating-endpoint">objektiv</span>
+
+                <div class="rating-options" id="rating-options">
+
+                    <label class="rating-option">
+                        <input type="radio" name="objectivity-rating" value="1">
+                        <span>1</span>
+                    </label>
+
+                    <label class="rating-option">
+                        <input type="radio" name="objectivity-rating" value="2">
+                        <span>2</span>
+                    </label>
+
+                    <label class="rating-option">
+                        <input type="radio" name="objectivity-rating" value="3">
+                        <span>3</span>
+                    </label>
+
+                    <label class="rating-option">
+                        <input type="radio" name="objectivity-rating" value="4">
+                        <span>4</span>
+                    </label>
+
+                    <label class="rating-option">
+                        <input type="radio" name="objectivity-rating" value="5">
+                        <span>5</span>
+                    </label>
+
+                    <label class="rating-option">
+                        <input type="radio" name="objectivity-rating" value="6">
+                        <span>6</span>
+                    </label>
+
+                    <label class="rating-option">
+                        <input type="radio" name="objectivity-rating" value="7">
+                        <span>7</span>
+                    </label>
+
+                </div>
+
+                <span class="rating-endpoint">subjektiv</span>
+
+            </div>
+
+            <p id="rating-error" class="rating-error" hidden>
+                Bitte beantworten Sie zuerst die Frage.
+            </p>
+
+            <button id="rating-submit" class="answer-button">
+                Weiter
+            </button>
+
+        </section>
+
+        <div
+            id="status-message"
+            class="status-message"
+        ></div>
+
+    </main>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
