@@ -67,6 +67,19 @@ function buildSessionTasks(groups) {
 
         shuffle(group.variants).forEach((variant, index) => {
 
+            // falsche Antwort ermitteln
+
+            let wrongAnswer = null;
+
+           for (const option of group.options) {
+
+                if (option !== variant.correctAnswer) { 
+
+                    wrongAnswer = option;
+                    break;
+                }
+            }   
+
             const groupPosition = index + 1;
 
             sessionTasks.push({
