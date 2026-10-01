@@ -311,7 +311,7 @@ const taskGroups = [
         ]
     },
 
-    /* Taskgruppe: Immobilienwerte (Foto + Tabelle) */
+    /* Taskgruppe: Immobilienwerte */
     {
         groupId: "real_estate",
 
@@ -356,33 +356,17 @@ const taskGroups = [
                 correctAnswer: "mehr als 550.000€",
             },
             {
-                variantId: "real_estate_02",
-                image: "images/immo-2.webp",
+                variantId: "real_estate_04",
+                image: "images/immo-4.webp",
                 table: {
                     headers: ["", ""],
                     rows: [
-                        ["Titel", "Viel Platz für neue Ideen – freistehendes Ein- oder Zweifamilienhaus mit Doppelgarage und Carport"],
-                        ["Baujahr", "1965"],
-                        ["Ort", "Rosellen, 41470 Neuss"],
-                        ["Zimmer", "7"],
-                        ["Wohnfläche in m²", "177,28"],
-                        ["Grundstücksfläche in m²", "716"]
-                    ]
-                },
-                correctAnswer: "mehr als 550.000€",
-            },
-            {
-                variantId: "real_estate_03",
-                image: "images/immo-3.webp",
-                table: {
-                    headers: ["", ""],
-                    rows: [
-                        ["Titel", "145m² Familienglück: Platz für die ganze Familie!"],
-                        ["Baujahr", "2026"],
-                        ["Ort", "Travemünde, 23570 Lübeck"],
-                        ["Zimmer", "5"],
-                        ["Wohnfläche in m²", "145"],
-                        ["Grundstücksfläche in m²", "227"]
+                        ["Titel", "Kleines Reihenmittelhaus nebst Garage in einer Seitenstraße"],
+                        ["Baujahr", "1957"],
+                        ["Ort", "Benrath, 40593 Düsseldorf"],
+                        ["Zimmer", "4"],
+                        ["Wohnfläche in m²", "84,01"],
+                        ["Grundstücksfläche in m²", "290.04"]
                     ]
                 },
                 correctAnswer: "weniger als 550.000€",
@@ -415,54 +399,6 @@ const taskGroups = [
                         ["Zimmer", "4"],
                         ["Wohnfläche in m²", "93"],
                         ["Grundstücksfläche in m²", "36"]
-                    ]
-                },
-                correctAnswer: "weniger als 550.000€",
-            },
-            {
-                variantId: "real_estate_04",
-                image: "images/immo-4.webp",
-                table: {
-                    headers: ["", ""],
-                    rows: [
-                        ["Titel", "Kleines Reihenmittelhaus nebst Garage in einer Seitenstraße"],
-                        ["Baujahr", "1957"],
-                        ["Ort", "Benrath, 40593 Düsseldorf"],
-                        ["Zimmer", "4"],
-                        ["Wohnfläche in m²", "84,01"],
-                        ["Grundstücksfläche in m²", "290.04"]
-                    ]
-                },
-                correctAnswer: "weniger als 550.000€",
-            },
-            {
-                variantId: "real_estate_05",
-                image: "images/immo-5.webp",
-                table: {
-                    headers: ["", ""],
-                    rows: [
-                        ["Titel", "Großzügiges Wohnen mit gehobener Ausstattung - Bungalow in Düsseldorf"],
-                        ["Baujahr", "1972"],
-                        ["Ort", "Urdenbach, 40593 Düsseldorf"],
-                        ["Zimmer", "4"],
-                        ["Wohnfläche in m²", "154,96"],
-                        ["Grundstücksfläche in m²", "304"]
-                    ]
-                },
-                correctAnswer: "mehr als 550.000€",
-            },
-            {
-                variantId: "real_estate_08",
-                image: "images/immo-8.webp",
-                table: {
-                    headers: ["", ""],
-                    rows: [
-                        ["Titel", "Mit malerischem Wasserblick! Stilvolles Altstadthaus in begehrter Wohnlage auf der Altstadtinsel!"],
-                        ["Baujahr", "1600"],
-                        ["Ort", "Innenstadt, 23552 Lübeck"],
-                        ["Zimmer", "4"],
-                        ["Wohnfläche in m²", "90"],
-                        ["Grundstücksfläche in m²", "42"]
                     ]
                 },
                 correctAnswer: "weniger als 550.000€",
