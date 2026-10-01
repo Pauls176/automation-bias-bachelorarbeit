@@ -64,6 +64,8 @@ const taskGroups = [
                     ]
                 },
                 correctAnswer: "Ja, zum zweiten Date",
+                explanationIfCorrect: "[PLATZHALTER]",
+                explanationIfWrong: "[PLATZHALTER]"
             },
             {
                 variantId: "speed_dating_02",
@@ -88,6 +90,8 @@ const taskGroups = [
                     ]
                 },
                 correctAnswer: "Ja, zum zweiten Date",
+                explanationIfCorrect: "[PLATZHALTER]",
+                explanationIfWrong: "[PLATZHALTER]"
             },
             {
                 variantId: "speed_dating_03",
@@ -112,6 +116,8 @@ const taskGroups = [
                     ]
                 },
                 correctAnswer: "Ja, zum zweiten Date",
+                explanationIfCorrect: "[PLATZHALTER]",
+                explanationIfWrong: "[PLATZHALTER]"
             },
             {
                 variantId: "speed_dating_06",
@@ -136,6 +142,8 @@ const taskGroups = [
                     ]
                 },
                 correctAnswer: "Nein, kein zweites Date",
+                explanationIfCorrect: "[PLATZHALTER]",
+                explanationIfWrong: "[PLATZHALTER]"
             },
             {
                 variantId: "speed_dating_09",
@@ -160,6 +168,8 @@ const taskGroups = [
                     ]
                 },
                 correctAnswer: "Nein, kein zweites Date",
+                explanationIfCorrect: "[PLATZHALTER]",
+                explanationIfWrong: "[PLATZHALTER]"
             }
         ]
     },
@@ -204,6 +214,8 @@ const taskGroups = [
                     "Lage direkt an einer U-Bahn-Station. Perfekt. Waschmaschinen und Trockner vorhanden. " +
                     "Gutes Frühstück, guter Concierge. Danke.",
                 correctAnswer: "von einem Menschen",
+                explanationIfCorrect: "[PLATZHALTER]",
+                explanationIfWrong: "[PLATZHALTER]"
             },
             {
                 variantId: "hotel_review_04",
@@ -214,6 +226,8 @@ const taskGroups = [
                     "Große Zimmer modern eingerichtet. 10-15min zu Fuß beim Weißen Haus. " +
                     "Supermarkt nur 1 Straße weiter entfernt.",
                 correctAnswer: "von einem Menschen",
+                explanationIfCorrect: "[PLATZHALTER]",
+                explanationIfWrong: "[PLATZHALTER]"
             },
             {
                 variantId: "hotel_review_06",
@@ -227,6 +241,8 @@ const taskGroups = [
                     "Leider war das Zimmer, in dem wir untergebracht waren, sehr klein und das Bad war veraltet. " +
                     "Außerdem war das Frühstück einfach und der Service war oft unterdurchschnittlich.",
                 correctAnswer: "KI-generiert",
+                explanationIfCorrect: "[PLATZHALTER]",
+                explanationIfWrong: "[PLATZHALTER]"
             },
             {
                 variantId: "hotel_review_10",
@@ -238,6 +254,8 @@ const taskGroups = [
                     "Negativ:\n\n" +
                     "Die Wände sind ein wenig dünn. Man hört das Nachbarzimmer.",
                 correctAnswer: "von einem Menschen",
+                explanationIfCorrect: "[PLATZHALTER]",
+                explanationIfWrong: "[PLATZHALTER]"
             },
             {
                 variantId: "hotel_review_12",
@@ -250,6 +268,8 @@ const taskGroups = [
                     "Negativ:\n\n" +
                     "Die Außenlärmbelastung war manchmal störend, insbesondere während der Stoßzeiten.",
                 correctAnswer: "KI-generiert",
+                explanationIfCorrect: "[PLATZHALTER]",
+                explanationIfWrong: "[PLATZHALTER]"
             }
         ]
     },
@@ -287,26 +307,36 @@ const taskGroups = [
                 variantId: "emotion_01",
                 image: "images/emot-1.png",
                 correctAnswer: "Wut",
+                explanationIfCorrect: "[PLATZHALTER]",
+                explanationIfWrong: "[PLATZHALTER]"
             },
             {
                 variantId: "emotion_03",
                 image: "images/emot-3.png",
                 correctAnswer: "Wut",
+                explanationIfCorrect: "[PLATZHALTER]",
+                explanationIfWrong: "[PLATZHALTER]"
             },
             {
                 variantId: "emotion_04",
                 image: "images/emot-4.png",
                 correctAnswer: "Wut",
+                explanationIfCorrect: "[PLATZHALTER]",
+                explanationIfWrong: "[PLATZHALTER]"
             },
             {
                 variantId: "emotion_08",
                 image: "images/emot-8.png",
                 correctAnswer: "Überraschung",
+                explanationIfCorrect: "[PLATZHALTER]",
+                explanationIfWrong: "[PLATZHALTER]"
             },
             {
                 variantId: "emotion_09",
                 image: "images/emot-9.png",
                 correctAnswer: "Überraschung",
+                explanationIfCorrect: "[PLATZHALTER]",
+                explanationIfWrong: "[PLATZHALTER]"
             }
         ]
     },
@@ -354,6 +384,8 @@ const taskGroups = [
                     ]
                 },
                 correctAnswer: "mehr als 550.000€",
+                explanationIfCorrect: "[PLATZHALTER]",
+                explanationIfWrong: "[PLATZHALTER]"
             },
             {
                 variantId: "real_estate_04",
@@ -370,6 +402,8 @@ const taskGroups = [
                     ]
                 },
                 correctAnswer: "weniger als 550.000€",
+                explanationIfCorrect: "[PLATZHALTER]",
+                explanationIfWrong: "[PLATZHALTER]"
             },
             {
                 variantId: "real_estate_06",
@@ -386,6 +420,8 @@ const taskGroups = [
                     ]
                 },
                 correctAnswer: "mehr als 550.000€",
+                explanationIfCorrect: "[PLATZHALTER]",
+                explanationIfWrong: "[PLATZHALTER]"
             },
             {
                 variantId: "real_estate_07",
@@ -402,6 +438,8 @@ const taskGroups = [
                     ]
                 },
                 correctAnswer: "weniger als 550.000€",
+                explanationIfCorrect: "[PLATZHALTER]",
+                explanationIfWrong: "[PLATZHALTER]"
             },
             {
                 variantId: "real_estate_09",
@@ -418,6 +456,8 @@ const taskGroups = [
                     ]
                 },
                 correctAnswer: "mehr als 550.000€",
+                explanationIfCorrect: "[PLATZHALTER]",
+                explanationIfWrong: "[PLATZHALTER]"
             }
         ]
     },
@@ -465,6 +505,8 @@ const taskGroups = [
                     ]
                 },
                 correctAnswer: "Regen",
+                explanationIfCorrect: "[PLATZHALTER]",
+                explanationIfWrong: "[PLATZHALTER]"
             },
             {
                 variantId: "rain_forecast_02",
@@ -478,6 +520,8 @@ const taskGroups = [
                     ]
                 },
                 correctAnswer: "Regen",
+                explanationIfCorrect: "[PLATZHALTER]",
+                explanationIfWrong: "[PLATZHALTER]"
             },
             {
                 variantId: "rain_forecast_06",
@@ -491,6 +535,8 @@ const taskGroups = [
                     ]
                 },
                 correctAnswer: "Kein Regen",
+                explanationIfCorrect: "[PLATZHALTER]",
+                explanationIfWrong: "[PLATZHALTER]"
             },
             {
                 variantId: "rain_forecast_08",
@@ -504,6 +550,8 @@ const taskGroups = [
                     ]
                 },
                 correctAnswer: "Kein Regen",
+                explanationIfCorrect: "[PLATZHALTER]",
+                explanationIfWrong: "[PLATZHALTER]"
             },
             {
                 variantId: "rain_forecast_11",
@@ -517,6 +565,8 @@ const taskGroups = [
                     ]
                 },
                 correctAnswer: "Kein Regen",
+                explanationIfCorrect: "[PLATZHALTER]",
+                explanationIfWrong: "[PLATZHALTER]"
             }
         ]
     }
