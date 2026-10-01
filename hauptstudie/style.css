@@ -34,6 +34,10 @@ body {
     border-bottom: 1px solid #ddd;
 }
 
+[hidden] {
+    display: none;
+}
+
 /* Gruppen-Einleitung */
 
 .group-intro-section {
@@ -70,6 +74,19 @@ body {
 
 .task-instruction {
     line-height: 1.6;
+}
+
+/* Chatfenster  */
+
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 400px;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 24px;
 }
 
 .answer-area {
