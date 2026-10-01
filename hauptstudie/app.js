@@ -82,6 +82,26 @@ function buildSessionTasks(groups) {
 
             const groupPosition = index + 1;
 
+            // KI-Empfehlung (richtig oder falsch)
+
+            const aiRecommendsCorrectly = groupPosition <= 3;
+            let aiRecommendation;
+            let aiExplanation;
+
+            if (aiRecommendsCorrectly) {
+
+                aiRecommendation =
+                    variant.correctAnswer;
+
+                aiExplanation = variant.explanationIfCorrect;
+            } else {
+
+                aiRecommendation =
+                    wrongAnswer;
+
+                aiExplanation = variant.explanationIfWrong;
+            }
+
             sessionTasks.push({
 
                 id: variant.variantId,
