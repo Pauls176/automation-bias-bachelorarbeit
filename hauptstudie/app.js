@@ -295,6 +295,11 @@ function showStudyIntro() {
         true;
 
     document.getElementById(
+        "chat-section"
+    ).hidden =
+        true;
+
+    document.getElementById(
         "rating-section"
     ).hidden =
         true;
@@ -336,6 +341,11 @@ function showGroupIntro(task) {
 
     document.getElementById(
         "task-section"
+    ).hidden =
+        true;
+
+    document.getElementById(
+        "chat-section"
     ).hidden =
         true;
 
@@ -416,7 +426,7 @@ function buildDataTable(tableData, className) {
                         index === row.length - 1;
 
                     // bei Speed-Dating Tabelle muss letzte Zeile über beide Spalten gehen
-                    
+
                     const missingCells =
                         tableData.headers.length - row.length;
 
@@ -471,6 +481,11 @@ function renderTask() {
         "task-section"
     ).hidden =
         false;
+
+    document.getElementById(
+        "chat-section"
+    ).hidden =
+        true;
 
     document.getElementById(
         "rating-section"
@@ -834,6 +849,11 @@ function showRatingScreen(task) {
 
     document.getElementById(
         "task-section"
+    ).hidden =
+        true;
+
+    document.getElementById(
+        "chat-section"
     ).hidden =
         true;
 
