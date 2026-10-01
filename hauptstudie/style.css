@@ -221,6 +221,10 @@ body {
         padding: 18px;
     }
 
+    .chat-messages {
+        padding: 18px;
+    }
+    
     .answer-area {
         padding: 16px;
     }
