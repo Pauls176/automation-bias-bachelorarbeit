@@ -254,7 +254,7 @@ const taskGroups = [
         ]
     },
 
-    /* Taskgruppe: Emotionserkennung (Foto) */
+    /* Taskgruppe: Emotionserkennung */
     {
         groupId: "emotion",
 
@@ -289,11 +289,6 @@ const taskGroups = [
                 correctAnswer: "Wut",
             },
             {
-                variantId: "emotion_02",
-                image: "images/emot-2.png",
-                correctAnswer: "Wut",
-            },
-            {
                 variantId: "emotion_03",
                 image: "images/emot-3.png",
                 correctAnswer: "Wut",
@@ -302,21 +297,6 @@ const taskGroups = [
                 variantId: "emotion_04",
                 image: "images/emot-4.png",
                 correctAnswer: "Wut",
-            },
-            {
-                variantId: "emotion_05",
-                image: "images/emot-5.png",
-                correctAnswer: "Wut",
-            },
-            {
-                variantId: "emotion_06",
-                image: "images/emot-6.png",
-                correctAnswer: "Überraschung",
-            },
-            {
-                variantId: "emotion_07",
-                image: "images/emot-7.png",
-                correctAnswer: "Überraschung",
             },
             {
                 variantId: "emotion_08",
