@@ -82,7 +82,7 @@ function buildSessionTasks(groups) {
 
             const groupPosition = index + 1;
 
-            // KI-Empfehlung (richtig oder falsch)
+            // KI-Empfehlung (3x richtig und dann 2x falsch, pro Block)
 
             const aiRecommendsCorrectly = groupPosition <= 3;
             let aiRecommendation;
@@ -148,10 +148,7 @@ const progressStorageKey =
         ("abp_progress_" + idFromUrl) :
         null;
 
-/* Erkennt einen Hard-Refresh anhand der Navigation-/Resource-Timing-Daten:
-   Bei einem normalen Reload beantwortet der Server das HTML meist aus dem
-   Cache oder per 304 (kleines transferSize). Ein Hard-Refresh erzwingt das
-   Umgehen des Caches, wodurch die Seite vollständig neu übertragen wird. */
+/* Erkennt einen Hard-Refresh anhand des Cache. */
 
 function isHardReload() {
 
@@ -353,10 +350,7 @@ function showGroupIntro(task) {
         false;
 }
 
-/* Erzeugt ein <table>-Element aus Kopf- und Datenzeilen.
-   Enthält eine Zeile weniger Zellen als Kopfspalten vorhanden sind
-   (z.B. Interessenähnlichkeit), spannt die letzte Zelle über die
-   verbleibenden Spalten. */
+/* Tabellen erzeugen */
 function buildDataTable(tableData, className) {
 
     const table =
@@ -398,7 +392,7 @@ function buildDataTable(tableData, className) {
     );
 
 
-    // Tabellenkörper
+    // Tabellenzeilen
 
     const tbody =
         document.createElement("tbody");
@@ -421,6 +415,8 @@ function buildDataTable(tableData, className) {
                     const isLastCell =
                         index === row.length - 1;
 
+                    // bei Speed-Dating Tabelle muss letzte Zeile über beide Spalten gehen
+                    
                     const missingCells =
                         tableData.headers.length - row.length;
 
