@@ -485,7 +485,7 @@ function renderTask() {
     document.getElementById(
         "chat-section"
     ).hidden =
-        true;
+        false;
 
     document.getElementById(
         "rating-section"
@@ -1054,6 +1054,11 @@ function showCompletion() {
         false;
 
     document.getElementById(
+        "chat-section"
+    ).hidden =
+        true;
+
+    document.getElementById(
         "task-counter"
     ).textContent =
         "Studie abgeschlossen";
@@ -1128,6 +1133,11 @@ function showMissingIdError() {
         "task-section"
     ).hidden =
         false;
+    
+     document.getElementById(
+        "chat-section"
+    ).hidden =
+        true;
 
     document.getElementById(
         "task-counter"
