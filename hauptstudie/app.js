@@ -129,7 +129,9 @@ function buildSessionTasks(groups) {
                 hotelName: variant.hotelName,
                 location: variant.location,
 
-                correctAnswer: variant.correctAnswer
+                correctAnswer: variant.correctAnswer,
+                aiRecommendation: aiRecommendation,
+                aiExplanation: aiExplanation
             });
         });
     });
@@ -138,10 +140,8 @@ function buildSessionTasks(groups) {
 }
 
 /* Fortschritt pro Teilnehmer-ID im localStorage sichern, damit ein
-   einfacher Seiten-Reload (z. B. versehentlich F5) die Studie an der
-   gleichen Stelle fortsetzt, statt Aufgaben doppelt zu stellen.
-   Ein Hard-Refresh (Strg+Shift+R) sowie der Testmodus starten
-   bewusst von vorne. */
+   einfacher Refresh keine Daten verliert.
+   Strg+Shift+R und der Testmodus starten immer von vorne. */
 
 const progressStorageKey =
     (!isTestMode && idFromUrl) ?
