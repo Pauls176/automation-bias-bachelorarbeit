@@ -8,7 +8,7 @@
 
 const taskGroups = [
 
-    /* Taskgruppe: Speed-Dating-Partner (Tabelle) */
+    /* Taskgruppe: Speed-Dating-Partner */
     {
         groupId: "speed_dating",
 
@@ -42,25 +42,25 @@ const taskGroups = [
 
         variants: [
             {
-                variantId: "speed_dating_04",
+                variantId: "speed_dating_01",
                 table1: {
                     headers: ["Merkmal", "Person A", "Person B"],
                     rows: [
                         ["Geschlecht", "Frau", "Mann"],
-                        ["Alter", "21", "31"],
-                        ["Studium", "Jura", "Betriebswirtschaftslehre"],
-                        ["Freizeitaktivitäten", "mehrmals/Woche", "mehrmals/Woche"],
-                        ["Interessenähnlichkeit", "73.5%"]
+                        ["Alter", "25", "28"],
+                        ["Studium", "Internationale Beziehungen/ Betriebswirtschaftslehre", "Biomedizin"],
+                        ["Freizeitaktivitäten", "zweimal/Woche", "einmal/Woche"],
+                        ["Interessenähnlichkeit", "66%"]
                     ]
                 },
                 table2: {
                     headers: ["Bewertung", "Person A über Person B", "Person B über Person A"],
                     rows: [
-                        ["Attraktivität", "7", "7"],
-                        ["Aufrichtigkeit", "5", "10"],
-                        ["Intelligenz", "7", "10"],
-                        ["Unterhaltsamkeit", "7", "2"],
-                        ["Ambition", "7", "8"]
+                        ["Attraktivität", "8", "7"],
+                        ["Aufrichtigkeit", "8", "10"],
+                        ["Intelligenz", "6", "8"],
+                        ["Unterhaltsamkeit", "6", "9"],
+                        ["Ambition", "6", "—"]
                     ]
                 },
                 correctAnswer: "Ja, zum zweiten Date",
@@ -85,6 +85,30 @@ const taskGroups = [
                         ["Intelligenz", "7", "7"],
                         ["Unterhaltsamkeit", "8", "8"],
                         ["Ambition", "7", "5"]
+                    ]
+                },
+                correctAnswer: "Ja, zum zweiten Date",
+            },
+            {
+                variantId: "speed_dating_03",
+                table1: {
+                    headers: ["Merkmal", "Person A", "Person B"],
+                    rows: [
+                        ["Geschlecht", "Frau", "Mann"],
+                        ["Alter", "25", "27"],
+                        ["Studium", "Bildung/ Wissenschaft", "Wirtschaft/ Finanzen"],
+                        ["Freizeitaktivitäten", "mehrmals/Woche", "zweimal/Woche"],
+                        ["Interessenähnlichkeit", "63%"]
+                    ]
+                },
+                table2: {
+                    headers: ["Bewertung", "Person A über Person B", "Person B über Person A"],
+                    rows: [
+                        ["Attraktivität", "7", "6"],
+                        ["Aufrichtigkeit", "7", "10"],
+                        ["Intelligenz", "7", "9"],
+                        ["Unterhaltsamkeit", "9", "9"],
+                        ["Ambition", "—", "4"]
                     ]
                 },
                 correctAnswer: "Ja, zum zweiten Date",
@@ -133,102 +157,6 @@ const taskGroups = [
                         ["Intelligenz", "7", "7"],
                         ["Unterhaltsamkeit", "7", "6"],
                         ["Ambition", "6", "6"]
-                    ]
-                },
-                correctAnswer: "Nein, kein zweites Date",
-            },
-            {
-                variantId: "speed_dating_01",
-                table1: {
-                    headers: ["Merkmal", "Person A", "Person B"],
-                    rows: [
-                        ["Geschlecht", "Frau", "Mann"],
-                        ["Alter", "25", "28"],
-                        ["Studium", "Internationale Beziehungen/ Betriebswirtschaftslehre", "Biomedizin"],
-                        ["Freizeitaktivitäten", "zweimal/Woche", "einmal/Woche"],
-                        ["Interessenähnlichkeit", "66%"]
-                    ]
-                },
-                table2: {
-                    headers: ["Bewertung", "Person A über Person B", "Person B über Person A"],
-                    rows: [
-                        ["Attraktivität", "8", "7"],
-                        ["Aufrichtigkeit", "8", "10"],
-                        ["Intelligenz", "6", "8"],
-                        ["Unterhaltsamkeit", "6", "9"],
-                        ["Ambition", "6", "—"]
-                    ]
-                },
-                correctAnswer: "Ja, zum zweiten Date",
-            },
-            {
-                variantId: "speed_dating_03",
-                table1: {
-                    headers: ["Merkmal", "Person A", "Person B"],
-                    rows: [
-                        ["Geschlecht", "Frau", "Mann"],
-                        ["Alter", "25", "27"],
-                        ["Studium", "Bildung/ Wissenschaft", "Wirtschaft/ Finanzen"],
-                        ["Freizeitaktivitäten", "mehrmals/Woche", "zweimal/Woche"],
-                        ["Interessenähnlichkeit", "63%"]
-                    ]
-                },
-                table2: {
-                    headers: ["Bewertung", "Person A über Person B", "Person B über Person A"],
-                    rows: [
-                        ["Attraktivität", "7", "6"],
-                        ["Aufrichtigkeit", "7", "10"],
-                        ["Intelligenz", "7", "9"],
-                        ["Unterhaltsamkeit", "9", "9"],
-                        ["Ambition", "—", "4"]
-                    ]
-                },
-                correctAnswer: "Ja, zum zweiten Date",
-            },
-            {
-                variantId: "speed_dating_07",
-                table1: {
-                    headers: ["Merkmal", "Person A", "Person B"],
-                    rows: [
-                        ["Geschlecht", "Frau", "Mann"],
-                        ["Alter", "24", "27"],
-                        ["Studium", "Sprache/ Journalismus", "Wirtschaft/ Finanzen"],
-                        ["Freizeitaktivitäten", "zweimal/Woche", "zweimal/Woche"],
-                        ["Interessenähnlichkeit", "69.5%"]
-                    ]
-                },
-                table2: {
-                    headers: ["Bewertung", "Person A über Person B", "Person B über Person A"],
-                    rows: [
-                        ["Attraktivität", "4", "5"],
-                        ["Aufrichtigkeit", "2", "8"],
-                        ["Intelligenz", "3", "8"],
-                        ["Unterhaltsamkeit", "3", "8"],
-                        ["Ambition", "1", "8"]
-                    ]
-                },
-                correctAnswer: "Nein, kein zweites Date",
-            },
-            {
-                variantId: "speed_dating_10",
-                table1: {
-                    headers: ["Merkmal", "Person A", "Person B"],
-                    rows: [
-                        ["Geschlecht", "Frau", "Mann"],
-                        ["Alter", "21", "25"],
-                        ["Studium", "Jura", "Wirtschaft/ Finanzen"],
-                        ["Freizeitaktivitäten", "mehrmals/Woche", "mehrmals/Woche"],
-                        ["Interessenähnlichkeit", "62.5%"]
-                    ]
-                },
-                table2: {
-                    headers: ["Bewertung", "Person A über Person B", "Person B über Person A"],
-                    rows: [
-                        ["Attraktivität", "7", "4"],
-                        ["Aufrichtigkeit", "7", "9"],
-                        ["Intelligenz", "8", "7"],
-                        ["Unterhaltsamkeit", "8", "4"],
-                        ["Ambition", "7", "6"]
                     ]
                 },
                 correctAnswer: "Nein, kein zweites Date",
