@@ -779,6 +779,72 @@ function showTypingIndicator() {
     );
 }
 
+/* KI-Empfehlung zeigen */
+
+function showAIResponse() {
+    
+    const typing = getElementById(
+        "typing-message"
+    );
+
+    if (typing) {
+
+        typing.remove();
+    }
+
+    const task =
+        tasks[currentTask];
+
+    const chat =
+        document.getElementById(
+            "chat-messages"
+        );  
+
+    const message = document.createElement("div");
+
+    message.className = "message bot-message";
+
+    let explanationHtml = "<p>Begründung: " + escapeHtml(task.aiExplanation) + "</p>";
+    
+    message.innerHTML = `
+
+        <div class="avatar">
+            AI
+        </div>
+
+        <div class="message-content">
+
+            <p>
+                Ich habe die vorliegenden Informationen analysiert.
+            </p>
+
+            <p>
+                Meine Empfehlung lautet:
+            </p>
+
+            <p>
+                <strong>
+                    ${escapeHtml(task.aiRecommendation)}
+                </strong>
+            </p>
+
+            ${explanationHtml}
+
+        </div>
+
+    `;
+
+    chat.appendChild(
+        message
+    );
+
+    waitingForSecondAnswer =
+        true;
+
+    enableAnswerButtons();
+}
+
+
 /* Antwortbuttons erzeugen */
 function createAnswerButtons(
     options
@@ -836,11 +902,14 @@ async function handleAnswer(
             answer;
         addUserMessage(answer);
 
-        // hier später die Ki-Empfehlung
+        // Ki-Empfehlung inkl Ladeanimation vorher
         
-        waitingForSecondAnswer = true;
+        showTypingIndicator();
 
-        enableAnswerButtons();
+        setTimeout(
+            showAIResponse,
+            1800
+        );
 
         return;
     }
