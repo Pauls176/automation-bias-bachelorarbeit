@@ -316,9 +316,7 @@ body {
     }
 }
 
-/* ============================================================
-   AUFGABEN-INHALTE
-   ============================================================ */
+/* Aufgabeninhalte */
 
 .task-image {
     display: block;
@@ -398,7 +396,7 @@ body {
     border-left: 4px solid #555;
 
     line-height: 1.6;
-    /* TODO */
+
     white-space: pre-line;
 }
 
