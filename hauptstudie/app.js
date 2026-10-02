@@ -1004,6 +1004,8 @@ async function saveTrial(task) {
 
     const changedAnswer = firstAnswer !== secondAnswer;
 
+    let secondResponseTimeSeconds;
+    
         if (aiShownAt !== null) {
 
             secondResponseTimeSeconds =
