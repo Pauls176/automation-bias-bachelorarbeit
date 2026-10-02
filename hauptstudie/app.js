@@ -485,6 +485,12 @@ function renderTask() {
     taskShownAt =
         Date.now();
 
+    // vor neuer Aufgabe zurücksetzen
+    
+    firstAnswer = null;
+    secondAnswer = null;
+    waitingForSecondAnswer = false;
+
     /* Aufgabenansicht zeigen, andere Ansichten ausblenden */
 
     document.getElementById(
