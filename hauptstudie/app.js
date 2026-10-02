@@ -461,6 +461,20 @@ function buildDataTable(tableData, className) {
     return table;
 }
 
+/* Fix: Text fehlerfrei in HTML einsetzen */
+function escapeHtml(
+    text
+) {
+
+    const div =
+        document.createElement("div");
+
+    div.textContent =
+        text;
+
+    return div.innerHTML;
+}
+
 /* Aufgabe laden */
 
 function renderTask() {
@@ -668,10 +682,10 @@ function renderTask() {
 
         <div class="message-content">
             <p>
-                ${
+                ${escapeHtml(
                     task.instruction ||
                     "Bitte geben Sie Ihre Antwort auf die Aufgabe ein."
-                }
+                )}
             </p>
         </div>
 
