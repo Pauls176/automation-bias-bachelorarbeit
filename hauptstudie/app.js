@@ -926,8 +926,7 @@ async function handleAnswer(
     try {
 
         await saveTrial(
-            task,
-            firstAnswer
+            task
         );
 
         document.getElementById(
@@ -973,10 +972,15 @@ async function handleAnswer(
 
 /* Daten an Supabase senden */
 
-async function saveTrial(task, answer) {
+async function saveTrial(task) {
 
-    const answerCorrect =
-        answer === task.correctAnswer;
+    const firstAnswerCorrect =
+        firstAnswer === task.correctAnswer;
+
+    const secondAnswerCorrect =
+        secondAnswer === task.correctAnswer;
+
+    const changedAnswer = firstAnswer !== secondAnswer;
 
     const responseTimeSeconds =
         taskShownAt !== null ?
@@ -1010,7 +1014,7 @@ async function saveTrial(task, answer) {
                 task.groupPosition,
 
             first_answer:
-                answer,
+                firstAnswer,
 
             second_answer: secondAnswer,
 
@@ -1018,7 +1022,13 @@ async function saveTrial(task, answer) {
                 task.correctAnswer,
 
             first_answer_correct:
-                answerCorrect,
+                firstAnswerCorrect,
+
+            second_answer_correct:
+                secondAnswerCorrect,
+
+            changed_answer:
+                changedAnswer,
 
             response_time_seconds:
                 responseTimeSeconds
