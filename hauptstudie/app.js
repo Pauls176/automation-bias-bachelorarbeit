@@ -237,6 +237,12 @@ let pendingRatingTask = null;
 
 let taskShownAt = null;
 
+let firstAnswer = null;
+
+let secondAnswer = null;
+
+let waitingForSecondAnswer = false;
+
 const storedProgress =
     loadStoredProgress();
 
@@ -698,11 +704,29 @@ async function handleAnswer(
     const task =
         tasks[currentTask];
 
+    // Erste und zweite Nutzerantwort (später mit KI-Empfehlung dazwischen)
+
+    if (!waitingForSecondAnswer) {
+
+        firstAnswer =
+            answer;
+
+        // hier später die Ki-Empfehlung
+        
+        waitingForSecondAnswer = true;
+
+        enableAnswerButtons();
+
+        return;
+    }
+
+    secondAnswer = answer;
+
     try {
 
         await saveTrial(
             task,
-            answer
+            firstAnswer
         );
 
         document.getElementById(
@@ -786,6 +810,8 @@ async function saveTrial(task, answer) {
 
             first_answer:
                 answer,
+
+            second_answer: secondAnswer,
 
             correct_answer:
                 task.correctAnswer,
