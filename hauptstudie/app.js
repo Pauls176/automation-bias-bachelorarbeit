@@ -783,7 +783,7 @@ function showTypingIndicator() {
 
 function showAIResponse() {
     
-    const typing = getElementById(
+    const typing = document.getElementById(
         "typing-message"
     );
 
