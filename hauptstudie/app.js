@@ -640,14 +640,47 @@ function renderTask() {
         );
     }
 
-    /* Instruktionstext (ehemals Chat-Einleitung) */
+    /* Instruktionstext als erste Chatnachricht, immer vorher leeren bevor es neu befüllt wird */
 
     document.getElementById(
         "task-instruction"
     ).textContent =
-        task.instruction ||
-        "Bitte geben Sie Ihre Antwort auf die Aufgabe ein.";
+           "";
 
+        
+    const chatMessages =
+        document.getElementById(
+            "chat-messages"
+        );
+    
+    chatMessages.innerHTML = "";
+
+    const introMessage =
+        document.createElement("div");
+
+    introMessage.className = "message bot-message";
+
+    introMessage.innerHTML = `
+    
+        <div class="avatar">
+            AI
+        </div>
+
+        <div class="message-content">
+            <p>
+                ${
+                    task.instruction ||
+                    "Bitte geben Sie Ihre Antwort auf die Aufgabe ein."
+                }
+            </p>
+        </div>
+
+    `;
+
+    chatMessages.appendChild(
+        introMessage
+    );
+    
     /* Antwortbuttons erzeugen */
 
      createAnswerButtons(
