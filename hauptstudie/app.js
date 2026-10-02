@@ -738,7 +738,46 @@ function addUserMessage(
     );
 }
 
+/* KI-Animation "schreibt" */
 
+function showTypingIndicator() {
+
+    const chat =
+        document.getElementById(
+            "chat-messages"
+        );
+
+    const message =
+        document.createElement("div");
+
+    message.id =
+        "typing-message";
+
+    message.className =
+        "message bot-message";
+
+    message.innerHTML = `
+
+        <div class="avatar">
+            AI
+        </div>
+
+        <div class="message-content">
+
+            <div class="typing-indicator">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+        </div>
+
+    `;
+
+    chat.appendChild(
+        message
+    );
+}
 
 /* Antwortbuttons erzeugen */
 function createAnswerButtons(
