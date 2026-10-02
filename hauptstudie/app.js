@@ -281,9 +281,10 @@ const totalBlocks = taskGroups.length + 1;
 
 /* Bewertungsblock */
 
-const ratingBlcok = {
+const ratingBlock = {
 
     label: "Einschätzung Mensch und KI",
+    // TODO: Platzhalter ändern
     intro: "Intro Bewertungsblock"
 };
 
