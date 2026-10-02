@@ -214,6 +214,18 @@ body {
     animation-delay: 0.4s;
 }
 
+@keyframes typing {
+    0%, 60%, 100% {
+        opacity: 0.3;
+        transform: translateY(0);
+    }
+
+    30% {
+        opacity: 1;
+        transform: translateY(-3px);
+    }
+}
+
 
 /* Objektivitäts-/Subjektivitäts-Rating */
 
