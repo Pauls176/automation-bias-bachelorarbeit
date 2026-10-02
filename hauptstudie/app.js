@@ -243,7 +243,7 @@ let secondAnswer = null;
 
 let waitingForSecondAnswer = false;
 
-let firstResponseTimeSeconds = null;
+let firstResponseTime = null;
 
 let aiShownAt = null;
 
@@ -494,7 +494,7 @@ function renderTask() {
     firstAnswer = null;
     secondAnswer = null;
     waitingForSecondAnswer = false;
-    firstResponseTimeSeconds = null;
+    firstResponseTime = null;
     aiShownAt = null;
 
     /* Aufgabenansicht zeigen, andere Ansichten ausblenden */
@@ -917,14 +917,12 @@ async function handleAnswer(
 
         if (taskShownAt !== null) {
 
-            firstResponseTimeSeconds =
-                Math.round(
-                    (Date.now() - taskShownAt) / 100
-                ) / 10;
+            firstResponseTime =
+                Date.now() - taskShownAt;
 
         } else {
 
-            firstResponseTimeSeconds =
+            firstResponseTime =
                 null;
         }
 
@@ -1004,18 +1002,16 @@ async function saveTrial(task) {
 
     const changedAnswer = firstAnswer !== secondAnswer;
 
-    let secondResponseTimeSeconds;
+    let secondResponseTime;
     
         if (aiShownAt !== null) {
 
-            secondResponseTimeSeconds =
-                Math.round(
-                    (Date.now() - aiShownAt) / 100
-                ) / 10;
+            secondResponseTime =
+                Date.now() - aiShownAt;
 
         } else {
 
-            secondResponseTimeSeconds =
+            secondResponseTime =
                 null;
         }
 
@@ -1064,11 +1060,11 @@ async function saveTrial(task) {
             changed_answer:
                 changedAnswer,
 
-            response_time_seconds:
-                firstResponseTimeSeconds,
+            first_response_time_ms:
+                firstResponseTime,
 
-            second_response_time_seconds:
-                secondResponseTimeSeconds
+            second_response_time_ms:
+                secondResponseTime
         });
 
 
