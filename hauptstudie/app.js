@@ -243,6 +243,10 @@ let secondAnswer = null;
 
 let waitingForSecondAnswer = false;
 
+let firstResponseTimeSeconds = null;
+
+let aiShownAt = null;
+
 const storedProgress =
     loadStoredProgress();
 
@@ -490,6 +494,8 @@ function renderTask() {
     firstAnswer = null;
     secondAnswer = null;
     waitingForSecondAnswer = false;
+    firstResponseTimeSeconds = null;
+    aiShownAt = null;
 
     /* Aufgabenansicht zeigen, andere Ansichten ausblenden */
 
@@ -844,6 +850,8 @@ function showAIResponse() {
         message
     );
 
+    aiShownAt = Date.now();
+
     waitingForSecondAnswer =
         true;
 
@@ -906,6 +914,20 @@ async function handleAnswer(
 
         firstAnswer =
             answer;
+
+        if (taskShownAt !== null) {
+
+            firstResponseTimeSeconds =
+                Math.round(
+                    (Date.now() - taskShownAt) / 100
+                ) / 10;
+
+        } else {
+
+            firstResponseTimeSeconds =
+                null;
+        }
+
         addUserMessage(answer);
 
         // Ki-Empfehlung inkl Ladeanimation vorher
@@ -982,12 +1004,18 @@ async function saveTrial(task) {
 
     const changedAnswer = firstAnswer !== secondAnswer;
 
-    const responseTimeSeconds =
-        taskShownAt !== null ?
-            Math.round(
-                (Date.now() - taskShownAt) / 100
-            ) / 10 :
-            null;
+        if (aiShownAt !== null) {
+
+            secondResponseTimeSeconds =
+                Math.round(
+                    (Date.now() - aiShownAt) / 100
+                ) / 10;
+
+        } else {
+
+            secondResponseTimeSeconds =
+                null;
+        }
 
     const {
         error
@@ -1021,7 +1049,7 @@ async function saveTrial(task) {
             ai_recommendation: task.aiRecommendation,
 
             ai_explanation: task.aiExplanation,
-            
+
             correct_answer:
                 task.correctAnswer,
 
@@ -1035,7 +1063,10 @@ async function saveTrial(task) {
                 changedAnswer,
 
             response_time_seconds:
-                responseTimeSeconds
+                firstResponseTimeSeconds,
+
+            second_response_time_seconds:
+                secondResponseTimeSeconds
         });
 
 
