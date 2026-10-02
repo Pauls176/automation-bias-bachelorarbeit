@@ -208,7 +208,9 @@ function saveProgress() {
             progressStorageKey,
             JSON.stringify({
                 tasks: tasks,
-                currentTask: currentTask
+                currentTask: currentTask,
+                inRatingBlock: inRatingBlock,
+                currentRating: currentRating
             })
         );
 
@@ -239,6 +241,10 @@ let firstResponseTime = null;
 
 let aiShownAt = null;
 
+let inRatingBlock = false;
+
+let currentRating = 0;
+
 const storedProgress =
     loadStoredProgress();
 
@@ -263,6 +269,18 @@ if (!isFreshSession) {
 
     saveProgress();
 }
+
+// 6 Blocks: 5 Aufgabentypen + 1 Bewertungsblock
+
+const totalBlocks = taskGroups.length + 1;
+
+/* Bewertungsblock */
+
+const ratingBlcok = {
+
+    label: "Einschätzung Mensch und KI",
+    intro: "Intro Bewertungsblock"
+};
 
 /* Aktuelle Aufgabe anzeigen: ggf. zuerst Gruppen-Einleitung */
 
@@ -320,7 +338,7 @@ function showGroupIntro(task) {
     document.getElementById(
         "task-counter"
     ).textContent =
-        `Block ${task.groupOrder} von ${taskGroups.length}`;
+        `Block ${task.groupOrder} von ${totalBlocks}`;
 
     document.getElementById(
         "group-intro-title"
@@ -517,7 +535,7 @@ function renderTask() {
     document.getElementById(
         "task-counter"
     ).textContent =
-        `Block ${task.groupOrder} von ${taskGroups.length}`;
+        `Block ${task.groupOrder} von ${totalBlocks}`;
 
 
     /* Titel */
@@ -1104,13 +1122,68 @@ function advanceToNextTask() {
         tasks.length
     ) {
 
-        showCompletion();
+        startRatingBlock();
 
         return;
     }
 
 
     goToCurrentTask();
+}
+
+/* Bewertungsblock starten */
+
+function startRatingBlock() { 
+    
+    inRatingBlock =
+        true;
+
+    currentRating =
+        0;
+
+    saveProgress();
+
+    document.getElementById(
+        "task-counter"
+    ).textContent =
+        `Block ${totalBlocks} von ${totalBlocks}`;
+
+    document.getElementById(
+        "group-intro-title"
+    ).textContent =
+        ratingBlock.label;
+
+    document.getElementById(
+        "group-intro-text"
+    ).textContent =
+        ratingBlock.intro;
+
+    // andere Ansichten ausblenden
+    
+    document.getElementById(
+        "study-intro-section"
+    ).hidden =
+        true;
+
+    document.getElementById(
+        "task-section"
+    ).hidden =
+        true;
+
+    document.getElementById(
+        "chat-section"
+    ).hidden =
+        true;
+
+    document.getElementById(
+        "rating-section"
+    ).hidden =
+        true;
+
+    document.getElementById(
+        "group-intro-section"
+    ).hidden =
+        false;
 }
 
 
@@ -1273,6 +1346,13 @@ document.getElementById(
 ).addEventListener(
     "click",
     () => {
+
+        if (inRatingBlock) {
+
+            showCompletion();
+
+            return;
+        }
 
         renderTask();
     }
