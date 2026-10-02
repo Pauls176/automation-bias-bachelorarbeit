@@ -702,6 +702,44 @@ function renderTask() {
     );
 }
 
+/* Nutzerantwort als Chatmessage anzeigen */
+
+function addUserMessage(
+    answer
+) {
+
+    const chat =
+        document.getElementById(
+            "chat-messages"
+        );
+
+    const message =
+        document.createElement("div");
+
+    message.className =
+        "message user-message";
+
+    message.innerHTML = `
+
+        <div class="message-content">
+            <p>
+                ${escapeHtml(answer)}
+            </p>
+        </div>
+
+        <div class="avatar">
+            Du
+        </div>
+
+    `;
+
+    chat.appendChild(
+        message
+    );
+}
+
+
+
 /* Antwortbuttons erzeugen */
 function createAnswerButtons(
     options
@@ -757,6 +795,7 @@ async function handleAnswer(
 
         firstAnswer =
             answer;
+        addUserMessage(answer);
 
         // hier später die Ki-Empfehlung
         
@@ -768,6 +807,7 @@ async function handleAnswer(
     }
 
     secondAnswer = answer;
+    addUserMessage(answer);
 
     try {
 
