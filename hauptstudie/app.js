@@ -1017,7 +1017,11 @@ async function saveTrial(task) {
                 firstAnswer,
 
             second_answer: secondAnswer,
+ 
+            ai_recommendation: task.aiRecommendation,
 
+            ai_explanation: task.aiExplanation,
+            
             correct_answer:
                 task.correctAnswer,
 
