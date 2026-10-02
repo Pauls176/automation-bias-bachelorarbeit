@@ -53,9 +53,7 @@ function shuffle(array) {
    - groupOrder hält fest, an welcher Stelle eine Gruppe in
      der randomisierten Reihenfolge durchlaufen wurde
    - isFirstInGroup markiert die erste Aufgabe einer Gruppe,
-     vor der der Gruppen-Einleitungsbildschirm gezeigt wird
-   - isLastInGroup markiert die letzte Aufgabe einer Gruppe,
-     nach der die Objektivitäts-/Subjektivitäts-Frage kommt */
+     vor der der Gruppen-Einleitungsbildschirm gezeigt wird */
 
 function buildSessionTasks(groups) {
 
@@ -210,8 +208,7 @@ function saveProgress() {
             progressStorageKey,
             JSON.stringify({
                 tasks: tasks,
-                currentTask: currentTask,
-                awaitingRating: awaitingRating
+                currentTask: currentTask
             })
         );
 
@@ -229,10 +226,6 @@ function saveProgress() {
 let tasks;
 
 let currentTask = 0;
-
-let awaitingRating = false;
-
-let pendingRatingTask = null;
 
 let taskShownAt = null;
 
@@ -262,15 +255,11 @@ if (!isFreshSession) {
 
     currentTask = storedProgress.currentTask || 0;
 
-    awaitingRating = Boolean(storedProgress.awaitingRating);
-
 } else {
 
     tasks = buildSessionTasks(taskGroups);
 
     currentTask = 0;
-
-    awaitingRating = false;
 
     saveProgress();
 }
@@ -951,21 +940,8 @@ async function handleAnswer(
         document.getElementById(
             "status-message"
         ).textContent = "";
-
-        if (task.isLastInGroup) {
-
-            awaitingRating = true;
-
-            saveProgress();
-
-            showRatingScreen(
-                task
-            );
-
-        } else {
-
+        
             advanceToNextTask();
-        }
 
         window.scrollTo(
             0,
@@ -1081,166 +1057,6 @@ async function saveTrial(task) {
     );
 }
 
-/* Objektivitäts-/Subjektivitäts-Rating anzeigen */
-
-function showRatingScreen(task) {
-
-    pendingRatingTask =
-        task;
-
-    document.getElementById(
-        "rating-group-name"
-    ).textContent =
-        task.groupLabel;
-
-    document
-        .querySelectorAll(
-            'input[name="objectivity-rating"]'
-        )
-        .forEach(
-            radio => {
-                radio.checked = false;
-            }
-        );
-
-    document.getElementById(
-        "rating-error"
-    ).hidden =
-        true;
-
-    document.getElementById(
-        "rating-submit"
-    ).disabled =
-        false;
-
-    document.getElementById(
-        "task-section"
-    ).hidden =
-        true;
-
-    document.getElementById(
-        "chat-section"
-    ).hidden =
-        true;
-
-    document.getElementById(
-        "rating-section"
-    ).hidden =
-        false;
-}
-
-/* Rating an Supabase senden */
-
-async function saveGroupRating(task, rating) {
-
-    const {
-        error
-    } = await supabaseClient
-        .from("group_ratings")
-        .insert({
-
-            participant_id:
-                participantId,
-
-            group_id:
-                task.groupId,
-
-            group_order:
-                task.groupOrder,
-
-            rating:
-                rating
-        });
-
-
-    if (error) {
-
-        console.error(
-            "Supabase error:",
-            error
-        );
-
-        throw error;
-    }
-}
-
-/* Rating-Interaktion */
-
-document.getElementById(
-    "rating-options"
-).addEventListener(
-    "change",
-    () => {
-
-        document.getElementById(
-            "rating-error"
-        ).hidden =
-            true;
-    }
-);
-
-document.getElementById(
-    "rating-submit"
-).addEventListener(
-    "click",
-    async () => {
-
-        const selected =
-            document.querySelector(
-                'input[name="objectivity-rating"]:checked'
-            );
-
-        if (!selected) {
-
-            document.getElementById(
-                "rating-error"
-            ).hidden =
-                false;
-
-            return;
-        }
-
-        const submitButton =
-            document.getElementById(
-                "rating-submit"
-            );
-
-        submitButton.disabled =
-            true;
-
-        try {
-
-            await saveGroupRating(
-                pendingRatingTask,
-                Number(selected.value)
-            );
-
-            document.getElementById(
-                "status-message"
-            ).textContent = "";
-
-            advanceToNextTask();
-
-        } catch (error) {
-
-            console.error(
-                error
-            );
-
-            document
-                .getElementById(
-                    "status-message"
-                )
-                .textContent =
-                "Beim Speichern ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.";
-
-            submitButton.disabled =
-                false;
-        }
-    }
-);
-
-
 /* Antwortbuttons aktivieren/deaktivieren */
 
 function enableAnswerButtons() {
@@ -1279,8 +1095,6 @@ function disableAnswerButtons() {
 function advanceToNextTask() {
 
     currentTask++;
-
-    awaitingRating = false;
 
     saveProgress();
 
@@ -1476,12 +1290,6 @@ if (hasValidSession) {
     } else if (currentTask >= tasks.length) {
 
         showCompletion();
-
-    } else if (awaitingRating) {
-
-        showRatingScreen(
-            tasks[currentTask]
-        );
 
     } else {
 
