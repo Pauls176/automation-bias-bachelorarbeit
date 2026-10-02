@@ -260,6 +260,11 @@ if (!isFreshSession) {
     tasks = storedProgress.tasks;
 
     currentTask = storedProgress.currentTask || 0;
+    
+    inRatingBlock = Boolean(storedProgress.inRatingBlock);
+
+    currentRating = storedProgress.currentRating || 0;
+
 
 } else {
 
