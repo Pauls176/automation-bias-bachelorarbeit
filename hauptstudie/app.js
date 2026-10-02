@@ -116,7 +116,6 @@ function buildSessionTasks(groups) {
 
                 groupIntro: group.groupIntro,
 
-                type: group.type,
                 prompt: group.prompt,
                 instruction: group.instruction,
                 options: group.options,
@@ -1029,9 +1028,6 @@ async function saveTrial(task) {
 
             task_id:
                 task.id,
-
-            task_type:
-                task.type,
 
             group_id:
                 task.groupId,

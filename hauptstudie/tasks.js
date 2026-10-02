@@ -25,8 +25,6 @@ const taskGroups = [
             "ob die beiden auf ein zweites Date gehen werden. Ein zweites Date " +
             "kommt nur zustande, wenn beide Partner sich dafür entschieden haben.",
 
-        type: "table",
-
         prompt:
             "Betrachten Sie die folgenden Informationen zu einem " +
             "Speed-Dating-Paar. Haben die beiden Personen " +
@@ -189,8 +187,6 @@ const taskGroups = [
             "Ihre Aufgabe besteht darin, zu beurteilen, ob die Rezension von einem Menschen " +
             "verfasst wurde oder KI-generiert ist.",
 
-        type: "text",
-
         prompt:
             "Lesen Sie den folgenden Text. " +
             "Wurde diese Hotelrezension von einem Menschen verfasst oder ist sie KI-generiert?",
@@ -287,8 +283,6 @@ const taskGroups = [
             "Ihre Aufgabe besteht darin, die primäre Emotion der abgebildeten " +
             "Person zu erkennen.",
 
-        type: "photo",
-
         prompt:
             "Betrachten Sie das folgende Foto. " +
             "Welche Emotion drückt das Gesicht der Person primär aus?",
@@ -352,8 +346,6 @@ const taskGroups = [
             "Sie erhalten jeweils ein Foto der Immobilie, sowie zusätzliche Eckdaten, " +
             "u.a. Baujahr, Wohnfläche und Lage. \n\n" +
             "Ihre Aufgabe besteht darin, den gelisteten Kaufpreis der Immobilie einzuschätzen.",
-
-        type: "photo_and_table",
 
         prompt:
             "Betrachten Sie die folgenden Informationen. " +
@@ -475,9 +467,7 @@ const taskGroups = [
             "der vorigen drei Tage. \n\n" +
             "Ihre Aufgabe besteht darin, eine Prognose abzugeben, ob es an diesem Tag " +
             "regnen wird oder nicht.",
-
-        type: "table",
-
+            
         prompt:
             "Betrachten Sie die folgenden Wetterdaten aus Hamburg (Fuhlsbüttel), Deutschland. " +
             "Hat es an diesem Tag dort geregnet?",
