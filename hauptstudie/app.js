@@ -677,7 +677,7 @@ function renderTask() {
     introMessage.innerHTML = `
     
         <div class="avatar">
-            AI
+            KI
         </div>
 
         <div class="message-content">
