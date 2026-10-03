@@ -515,6 +515,129 @@ function escapeHtml(
     return div.innerHTML;
 }
 
+/* Aufgabeninhalt in Container schreiben */
+function renderTaskContent(content, container) {
+
+    // Inhalt zunächst leeren
+
+    container.innerHTML = "";
+
+    /* Aufgabentext */
+
+    const prompt =
+        document.createElement("p");
+
+    prompt.textContent =
+        content.prompt;
+
+    container.appendChild(
+        prompt
+    );
+
+    /* Foto (kann zusätzlich zu einer Tabelle auftreten, z.B. Immobilien) */
+
+    if (content.image) {
+
+        const image =
+            document.createElement("img");
+
+        image.src =
+            content.image;
+
+        image.alt =
+            "Foto derzeit nicht verfügbar";
+
+        image.className =
+            "task-image";
+
+        container.appendChild(
+            image
+        );
+    }
+
+    /* Tabelle(n) */
+
+    if (content.groupId === "speed_dating") {
+
+        // Tabelle 1: Stammdaten & Interessenähnlichkeit
+
+        container.appendChild(
+            buildDataTable(
+                content.table1,
+                "task-table task-table--speed-dating"
+            )
+        );
+
+        // Hinweis zwischen den beiden Tabellen
+
+        const tableNote =
+            document.createElement("p");
+
+        tableNote.className =
+            "table-note";
+
+        tableNote.textContent =
+            "Die folgenden Werte zeigen, wie diese Person ihr Gegenüber eingeschätzt hat " +
+            "(nicht, wie sie selbst von ihrem Gegenüber eingeschätzt wurde).";
+
+        container.appendChild(
+            tableNote
+        );
+
+        // Tabelle 2: Bewertungen
+
+        container.appendChild(
+            buildDataTable(
+                content.table2,
+                "task-table task-table--speed-dating"
+            )
+        );
+
+    } else if (content.table) {
+
+        container.appendChild(
+            buildDataTable(
+                content.table,
+                "task-table"
+            )
+        );
+    }
+
+    /* Text */
+
+     if (content.information) {
+
+        if (content.hotelName && content.location) {
+
+            const hotelHeading =
+                document.createElement("p");
+
+            hotelHeading.className =
+                "hotel-heading";
+
+            hotelHeading.textContent =
+                `Bewertung von ${content.hotelName} in ${content.location}`;
+
+            container.appendChild(
+                hotelHeading
+            );
+        }
+
+        const informationBox =
+            document.createElement("div");
+
+        informationBox.className =
+            "information-box";
+
+        informationBox.textContent =
+            content.information;
+
+        container.appendChild(
+            informationBox
+        );
+    }
+}
+
 /* Aufgabe laden */
 
 function renderTask() {
@@ -582,125 +705,10 @@ function renderTask() {
             "task-description"
         );
 
-    // Inhalt zunächst leeren
-
-    taskDescription.innerHTML = "";
-
-
-    /* Aufgabentext */
-
-    const prompt =
-        document.createElement("p");
-
-    prompt.textContent =
-        task.prompt;
-
-    taskDescription.appendChild(
-        prompt
+    renderTaskContent(
+        task, 
+        taskDescription
     );
-
-    /* Foto (kann zusätzlich zu einer Tabelle auftreten, z.B. Immobilien) */
-
-    if (task.image) {
-
-        const image =
-            document.createElement("img");
-
-        image.src =
-            task.image;
-
-        image.alt =
-            "Foto derzeit nicht verfügbar";
-
-        image.className =
-            "task-image";
-
-        taskDescription.appendChild(
-            image
-        );
-    }
-
-    /* Tabelle(n) */
-
-    if (task.groupId === "speed_dating") {
-
-        // Tabelle 1: Stammdaten & Interessenähnlichkeit
-
-        taskDescription.appendChild(
-            buildDataTable(
-                task.table1,
-                "task-table task-table--speed-dating"
-            )
-        );
-
-        // Hinweis zwischen den beiden Tabellen
-
-        const tableNote =
-            document.createElement("p");
-
-        tableNote.className =
-            "table-note";
-
-        tableNote.textContent =
-            "Die folgenden Werte zeigen, wie diese Person ihr Gegenüber eingeschätzt hat " +
-            "(nicht, wie sie selbst von ihrem Gegenüber eingeschätzt wurde).";
-
-        taskDescription.appendChild(
-            tableNote
-        );
-
-        // Tabelle 2: Bewertungen
-
-        taskDescription.appendChild(
-            buildDataTable(
-                task.table2,
-                "task-table task-table--speed-dating"
-            )
-        );
-
-    } else if (task.table) {
-
-        taskDescription.appendChild(
-            buildDataTable(
-                task.table,
-                "task-table"
-            )
-        );
-    }
-
-    /* Text */
-
-     if (task.information) {
-
-        if (task.hotelName && task.location) {
-
-            const hotelHeading =
-                document.createElement("p");
-
-            hotelHeading.className =
-                "hotel-heading";
-
-            hotelHeading.textContent =
-                `Bewertung von ${task.hotelName} in ${task.location}`;
-
-            taskDescription.appendChild(
-                hotelHeading
-            );
-        }
-
-        const informationBox =
-            document.createElement("div");
-
-        informationBox.className =
-            "information-box";
-
-        informationBox.textContent =
-            task.information;
-
-        taskDescription.appendChild(
-            informationBox
-        );
-    }
 
     /* Instruktionstext als erste Chatnachricht, immer vorher leeren bevor es neu befüllt wird */
 
@@ -1309,7 +1317,7 @@ for (const sliderId of ratingSliderIds) {
             markSliderTouched(slider);
         }
     );
-    
+
 }
 
 // SLider vor jeder Bewertung zurücksetzen
