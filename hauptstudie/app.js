@@ -1285,7 +1285,7 @@ function showRatingScreen() {
 const ratingSliderIds = [
     "rating-human",
     "rating-ai"
-]
+];
 
 for (const sliderId of ratingSliderIds) {
 
@@ -1322,6 +1322,53 @@ function resetRatingSliders() {
         ).textContent =
             "–";
     }
+}
+
+/* Rating in Supabase speichern */
+
+async function saveGroupRating() {
+     const ratingGroup =
+        ratingGroups[currentRating];
+
+    const {
+        error
+    } = await supabaseClient
+        .from("group_ratings")
+        .insert({
+
+            participant_id:
+                participantId,
+
+            group_id:
+                ratingGroup.groupId,
+
+            group_order:
+                ratingGroup.groupOrder,
+
+            human_rating:
+                humanRating,
+
+            ai_rating:
+                aiRating,
+
+            rating_difference:
+                humanRating - aiRating
+        });
+
+    if (error) {
+
+        console.error(
+            "Supabase error:",
+            error
+        );
+
+        throw error;
+    }
+
+    console.log(
+        "Einschätzung gespeichert:",
+        ratingGroup.groupId
+    );
 }
 
 /* Abschluss */
