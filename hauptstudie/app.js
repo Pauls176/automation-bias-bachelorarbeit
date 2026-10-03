@@ -1216,6 +1216,67 @@ function startRatingBlock() {
         false;
 }
 
+/* Rating-Screen anzeigen */
+
+function showRatingScreen() {
+    
+    const currentGroupId =
+        ratingGroups[currentRating].groupId;
+
+    let group = null;
+
+    for (const taskGroup of taskGroups) {
+
+        if (taskGroup.groupId === currentGroupId) {
+
+            group = taskGroup;
+
+            break;
+        }
+    }
+
+    document.getElementById(
+        "task-counter"
+    ).textContent =
+        `Block ${totalBlocks} von ${totalBlocks}`;
+
+    document.getElementById(
+        "rating-title"
+    ).textContent =
+        group.groupLabel;
+
+    // andere Ansichten ausblenden
+
+    document.getElementById(
+        "study-intro-section"
+    ).hidden =
+        true;
+
+    document.getElementById(
+        "group-intro-section"
+    ).hidden =
+        true;
+
+    document.getElementById(
+        "task-section"
+    ).hidden =
+        true;
+
+    document.getElementById(
+        "chat-section"
+    ).hidden =
+        true;
+
+    document.getElementById(
+        "rating-section"
+    ).hidden =
+        false;
+
+    window.scrollTo(
+        0,
+        0
+    );
+}
 
 /* Abschluss */
 
@@ -1379,7 +1440,7 @@ document.getElementById(
 
         if (inRatingBlock) {
 
-            showCompletion();
+            showRatingScreen();
 
             return;
         }
