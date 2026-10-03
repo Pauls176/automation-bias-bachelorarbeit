@@ -343,11 +343,23 @@ body {
     background: #222;
 }
 
-/* Sichtbarer Rahmen bei Bedienung mit der Tastatur */
+/* untouched Regler hellgrau */
 
-.rating-slider:focus-visible {
-    outline: 2px solid #555;
-    outline-offset: 4px;
+.rating-slider.untouched::-webkit-slider-thumb {
+    background: #bbb;
+}
+
+.rating-slider.untouched::-moz-range-thumb {
+    background: #bbb;
+}
+
+/* Fehlertext, wenn nicht alle Slider bewertet wurden */
+
+.rating-hint {
+    margin: 24px 0 0;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
 }
 
 
