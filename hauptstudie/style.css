@@ -283,6 +283,74 @@ body {
     color: #666;
 }
 
+
+/* Slider-Design */
+
+.rating-slider {
+    flex: 1;
+    min-width: 0;
+    height: 28px;
+
+    margin: 0;
+
+    background: transparent;
+
+    -webkit-appearance: none;
+    appearance: none;
+
+    cursor: pointer;
+    touch-action: pan-y;
+}
+
+/* moz für Firefox, webkit für Chrome, Safari und Edge */
+/* Track (Auswahllänge) */
+
+.rating-slider::-webkit-slider-runnable-track {
+    height: 6px;
+    border-radius: 3px;
+    background: #ddd;
+}
+
+.rating-slider::-moz-range-track {
+    height: 6px;
+    border-radius: 3px;
+    background: #ddd;
+}
+
+/* Thumb (Auswahlpunkt) */
+
+.rating-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+
+    width: 22px;
+    height: 22px;
+    margin-top: -8px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #222;
+}
+
+.rating-slider::-moz-range-thumb {
+    width: 22px;
+    height: 22px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #222;
+}
+
+/* Sichtbarer Rahmen bei Bedienung mit der Tastatur */
+
+.rating-slider:focus-visible {
+    outline: 2px solid #555;
+    outline-offset: 4px;
+}
+
+
 /* Smartphone */
 
 @media (max-width: 600px) {
