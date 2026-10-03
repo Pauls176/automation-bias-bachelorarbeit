@@ -109,8 +109,6 @@ function buildSessionTasks(groups) {
                 groupPosition: groupPosition,
                 isFirstInGroup:
                     groupPosition === 1,
-                isLastInGroup:
-                    groupPosition === group.variants.length,
 
                 groupIntro: group.groupIntro,
 
@@ -578,7 +576,7 @@ function renderTaskContent(content, container) {
 
         tableNote.textContent =
             "Die folgenden Werte zeigen, wie diese Person ihr Gegenüber eingeschätzt hat " +
-            "(nicht, wie sie selbst von ihrem Gegenüber eingeschätzt wurde).";
+            "(auf einer Skala von 1-10).";
 
         container.appendChild(
             tableNote
