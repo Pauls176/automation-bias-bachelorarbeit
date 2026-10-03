@@ -1245,6 +1245,8 @@ function showRatingScreen() {
     ).textContent =
         group.groupLabel;
 
+    resetRatingSliders();    
+
     // andere Ansichten ausblenden
 
     document.getElementById(
@@ -1276,6 +1278,50 @@ function showRatingScreen() {
         0,
         0
     );
+}
+
+/* Slider für Rating-Screen  */
+
+const ratingSliderIds = [
+    "rating-human",
+    "rating-ai"
+]
+
+for (const sliderId of ratingSliderIds) {
+
+    const slider =
+        document.getElementById(
+            sliderId
+        );
+
+    slider.addEventListener(
+        "input",
+        function () {
+
+            document.getElementById(
+                sliderId + "-value"
+            ).textContent =
+                slider.value;
+        }
+    );
+}
+
+// SLider vor jeder Bewertung zurücksetzen
+
+function resetRatingSliders() {
+
+    for (const sliderId of ratingSliderIds) {
+
+        document.getElementById(
+            sliderId
+        ).value =
+            0;
+
+        document.getElementById(
+            sliderId + "-value"
+        ).textContent =
+            "–";
+    }
 }
 
 /* Abschluss */
