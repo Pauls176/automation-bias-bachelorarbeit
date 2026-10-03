@@ -1253,6 +1253,52 @@ function showRatingScreen() {
     ).textContent =
         group.groupLabel;
 
+    // Beispielaufgabe (als Erinnerung) einfügen
+
+    const exampleTask = group.variants[0];
+    const exampleContent = {
+
+        groupId: group.groupId,   
+        prompt: group.prompt,
+
+        image: exampleTask.image,
+        table: exampleTask.table,
+        table1: exampleTask.table1,
+        table2: exampleTask.table2,
+        information: exampleTask.information,
+        hotelName: exampleTask.hotelName,
+        location: exampleTask.location
+    };
+
+    renderTaskContent(
+        exampleContent, document.getElementById("rating-example"));
+
+    // Antwortoptionen der Beispielaufgabe nicht klickbar
+
+    const exampleOptions =
+        document.getElementById("rating-example-options");
+
+    exampleOptions.innerHTML = "";
+
+    for (const option of group.options) {
+
+        const button =
+            document.createElement("button");
+
+        button.className =
+            "answer-button";
+
+        button.textContent =
+            option;
+
+        button.disabled =
+            true;
+
+        exampleOptions.appendChild(
+            button
+        );
+    }
+
     resetRatingSliders();    
 
     // andere Ansichten ausblenden
