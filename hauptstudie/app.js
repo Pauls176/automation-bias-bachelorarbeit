@@ -1007,7 +1007,7 @@ async function handleAnswer(
                 "status-message"
             )
             .textContent =
-            "Beim Speichern ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.";
+            "Beim Speichern ist ein Fehler aufgetreten.";
 
         enableAnswerButtons();
     }
@@ -1371,6 +1371,25 @@ async function saveGroupRating() {
     );
 }
 
+/* Nächster Rating-Bildschirm */
+
+function nextRating() {
+   
+    currentRating++;
+
+    saveProgress();
+
+    if (
+        currentRating >= ratingGroups.length
+    ) {
+
+        showCompletion();   
+        return;
+    }
+
+    showRatingScreen();
+}
+
 /* Abschluss */
 
 function showCompletion() {
@@ -1542,6 +1561,70 @@ document.getElementById(
     }
 );
 
+/* Rating-Screen: Weiter-Button */
+
+document.getElementById(
+    "rating-submit"
+).addEventListener(
+    "click",
+    async () => { const submitButton =
+            document.getElementById(
+                "rating-submit"
+            );
+
+        submitButton.disabled =
+            true;
+
+        // Slider-Werte als Zahlen speichern
+
+        const humanRating =
+            Number(
+                document.getElementById(
+                    "rating-human"
+                ).value
+            );
+
+        const aiRating =
+            Number(
+                document.getElementById(
+                    "rating-ai"
+                ).value
+            );
+
+        try {
+
+            await saveGroupRating(
+                humanRating,
+                aiRating
+            );
+
+            document.getElementById(
+                "status-message"
+            ).textContent = "";
+
+            submitButton.disabled =
+                false;
+
+            nextRating();
+
+        } catch (error) {
+
+            console.error(
+                error
+            );
+
+            document
+                .getElementById(
+                    "status-message"
+                )
+                .textContent =
+                "Beim Speichern ist ein Fehler aufgetreten.";
+
+            submitButton.disabled =
+                false;
+        }
+    }
+);
 
 /* START */
 
