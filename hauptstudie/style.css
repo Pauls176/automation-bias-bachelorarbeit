@@ -239,6 +239,29 @@ body {
     font-size: 24px;
 }
 
+/* Beispielaufgabe (im Rating Screen) */
+
+.rating-example-box {
+    margin: 24px 0;
+    padding: 16px;
+
+    border: 1px dashed #ccc;
+    border-radius: 8px;
+
+    background: #fafafa;
+}
+
+.rating-example-label {
+    margin: 0 0 8px;
+    font-size: 14px;
+    color: #666;
+}
+
+.preview-options {
+    display: flex;
+    gap: 12px;
+}
+
 .rating-section > .answer-button {
     display: block;
     width: 100%;
@@ -362,6 +385,26 @@ body {
     color: #666;
 }
 
+/* Beispielaufgabe: Werte und Bilder ausgegraut */
+
+.task-preview {
+    user-select: none;
+}
+
+.task-preview .task-table td:not(:first-child) {
+    color: #999;
+    filter: blur(3px);
+}
+
+.task-preview .information-box {
+    color: #999;
+    filter: blur(3px);
+}
+
+.task-preview .task-image {
+    filter: grayscale(1) blur(4px);
+    opacity: 0.3;
+}
 
 /* Smartphone */
 
@@ -377,6 +420,10 @@ body {
 
     .rating-section {
         padding: 18px;
+    }
+
+    .preview-options {
+        flex-direction: column;
     }
 
     .chat-messages {
