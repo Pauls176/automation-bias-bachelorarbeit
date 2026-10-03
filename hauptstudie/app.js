@@ -1302,6 +1302,14 @@ for (const sliderId of ratingSliderIds) {
         }
     );
 
+    // Sonderfall: wenn der Startwert 0 geklickt wird
+    slider.addEventListener(
+        "pointerdown",
+        function () {
+            markSliderTouched(slider);
+        }
+    );
+    
 }
 
 // SLider vor jeder Bewertung zurücksetzen
