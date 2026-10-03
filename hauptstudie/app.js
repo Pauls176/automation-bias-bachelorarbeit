@@ -1,6 +1,6 @@
 
 /* Teilnehmer-ID: im Echtbetrieb kommt sie per ?id=... von LimeSurvey.
-   Testmodus erzeugt eine zufällige Test-ID. */
+   Testmodus hat ID = test */
 
 const urlParams =
     new URLSearchParams(window.location.search);
@@ -20,7 +20,7 @@ const hasValidSession =
 
 const participantId =
     isTestMode ?
-        ("TEST-" + crypto.randomUUID()) :
+        ("test") :
         idFromUrl;
 
 console.log(
