@@ -813,7 +813,7 @@ function showTypingIndicator() {
     message.innerHTML = `
 
         <div class="avatar">
-            AI
+            KI
         </div>
 
         <div class="message-content">
@@ -863,7 +863,7 @@ function showAIResponse() {
     message.innerHTML = `
 
         <div class="avatar">
-            AI
+            KI
         </div>
 
         <div class="message-content">
