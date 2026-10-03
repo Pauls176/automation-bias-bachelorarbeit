@@ -1326,7 +1326,7 @@ function resetRatingSliders() {
 
 /* Rating in Supabase speichern */
 
-async function saveGroupRating() {
+async function saveGroupRating(humanRating, aiRating) {
      const ratingGroup =
         ratingGroups[currentRating];
 
