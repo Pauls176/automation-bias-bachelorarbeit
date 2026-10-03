@@ -288,6 +288,30 @@ const ratingBlock = {
     intro: "Intro Bewertungsblock"
 };
 
+// Bewertungsblock in derselben Reihenfolge wie AUfgaben bauen
+
+function buildRatingGroups(sessionTasks) {
+
+    const result = [];
+
+    for (const task of sessionTasks) {
+
+         if (task.isFirstInGroup) {
+
+            result.push({
+                groupId: task.groupId,
+                groupOrder: task.groupOrder
+            });
+        }
+    }
+
+    return result;
+}
+
+const ratingGroups =
+    buildRatingGroups(tasks);
+    
+
 /* Aktuelle Aufgabe anzeigen: ggf. zuerst Gruppen-Einleitung */
 
 function goToCurrentTask() {
