@@ -1298,12 +1298,10 @@ for (const sliderId of ratingSliderIds) {
         "input",
         function () {
 
-            document.getElementById(
-                sliderId + "-value"
-            ).textContent =
-                slider.value;
+            markSliderTouched(slider);
         }
     );
+
 }
 
 // SLider vor jeder Bewertung zurücksetzen
@@ -1318,10 +1316,67 @@ function resetRatingSliders() {
             0;
 
         document.getElementById(
+            sliderId
+        ).classList.add(
+            "untouched"
+        );
+
+        document.getElementById(
             sliderId + "-value"
         ).textContent =
             "–";
     }
+
+    updateRatingSubmitState();
+}
+
+// Wenn ein Slider bewegt wurde
+
+function markSliderTouched(slider) {
+
+    slider.classList.remove(
+        "untouched"
+    );
+
+    document.getElementById(
+        slider.id + "-value"
+    ).textContent =
+        slider.value;
+
+    // ggf. den Button dann freigeben    
+    updateRatingSubmitState();
+}
+
+/* Wenn beide Slider bewegt wurden, Button freigeben */
+
+function updateRatingSubmitState() {
+
+    // wenn mind. ein Slider "untouched" ist, bleibt der Button deaktiviert
+
+    let allTouched = true;
+
+    for (const sliderId of ratingSliderIds) {
+
+        const slider =
+            document.getElementById(
+                sliderId
+            );
+
+        if (slider.classList.contains("untouched")) {
+
+            allTouched = false;
+        }
+    }
+
+    document.getElementById(
+        "rating-submit"
+    ).disabled =
+        !allTouched;
+
+    document.getElementById(
+        "rating-hint"
+    ).hidden =
+        allTouched;
 }
 
 /* Rating in Supabase speichern */
@@ -1601,9 +1656,6 @@ document.getElementById(
             document.getElementById(
                 "status-message"
             ).textContent = "";
-
-            submitButton.disabled =
-                false;
 
             nextRating();
 

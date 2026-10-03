@@ -92,7 +92,7 @@
                     <input
                         type="range"
                         id="rating-human"
-                        class="rating-slider"
+                        class="rating-slider untouched"
                         min="0"
                         max="100"
                         step="1"
@@ -121,7 +121,7 @@
                     <input
                         type="range"
                         id="rating-ai"
-                        class="rating-slider"
+                        class="rating-slider untouched"
                         min="0"
                         max="100"
                         step="1"
@@ -139,7 +139,11 @@
            
             </div>    
 
-            <button id="rating-submit" class="answer-button">
+            <p id="rating-hint" class="rating-hint">
+                Bitte bewegen Sie beide Schieberegler, um fortzufahren.
+            </p>
+
+            <button id="rating-submit" class="answer-button" disabled>
                 Weiter
             </button>
             
