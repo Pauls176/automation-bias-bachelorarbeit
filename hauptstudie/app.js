@@ -1748,14 +1748,27 @@ if (hasValidSession) {
 
         showStudyIntro();
 
-    } else if (currentTask >= tasks.length) {
+    } else if (inRatingBlock && currentRating >= ratingGroups.length) {
 
+        // alle Bewertungen abgegeben
         showCompletion();
 
-    } else {
+    } else if (inRatingBlock && currentRating > 0) {
 
+        // mitten im Bewertungsblock
+        showRatingScreen();
+        
+    } else if (inRatingBlock || currentTask >= tasks.length){
+
+        // Aufgabenblock fertig, ggf. bei Einleitung vom Bewertungsblock
+        startRatingBlock();
+
+    } else {
+        
+        // im Aufgabenblock
         goToCurrentTask();
     }
+
 
 } else {
 
