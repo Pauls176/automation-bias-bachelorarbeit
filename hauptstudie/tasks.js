@@ -480,16 +480,15 @@ const taskGroups = [
         ],
 
         variants: [
-            // eine Variante fehlt noch, gab nicht genug aus Pilotstudie
             {
-                variantId: "rain_forecast_01",
+                variantId: "rain_forecast_12",
                 table: {
                     headers: ["", ""],
                     rows: [
-                        ["Datum", "TODO"],
-                        ["Ø Temperatur", "TODO"],
-                        ["Sonnenstunden", "TODO"],
-                        ["Niederschlag (der vorigen 3 Tage)", "TODO"]
+                        ["Datum", "10.01.2025"],
+                        ["Ø Temperatur", "1,2 °C"],
+                        ["Sonnenstunden", "1,0 h"],
+                        ["Niederschlag (der vorigen 3 Tage)", "3,1 mm"]
                     ]
                 },
                 correctAnswer: "Regen",
