@@ -60,8 +60,8 @@ const taskGroups = [
                     ]
                 },
                 correctAnswer: "Ja, zum zweiten Date",
-                explanationIfCorrect: "[PLATZHALTER]",
-                explanationIfWrong: "[PLATZHALTER]"
+                explanationIfCorrect: "Beide bewerten sich hoch, etwa bei Attraktivität (8 und 7) und Aufrichtigkeit (8 und 10). Das spricht klar für ein zweites Date.",
+                explanationIfWrong: "Die Frau bewertet Intelligenz und Unterhaltsamkeit des Mannes nur mit 6 Punkten, er ihre dagegen mit 8 und 9. Das spricht klar gegen ein zweites Date."
             },
             {
                 variantId: "speed_dating_02",
@@ -86,8 +86,8 @@ const taskGroups = [
                     ]
                 },
                 correctAnswer: "Ja, zum zweiten Date",
-                explanationIfCorrect: "[PLATZHALTER]",
-                explanationIfWrong: "[PLATZHALTER]"
+                explanationIfCorrect: "Beide bewerten sich fast durchweg mit 7 bis 9 Punkten, der Mann die Attraktivität der Frau sogar mit 9. Das spricht klar für ein zweites Date.",
+                explanationIfWrong: "Die Frau ist mit 22 Jahren fünf Jahre jünger als der Mann, und beide teilen nur 57 % ihrer Interessen. Das spricht klar gegen ein zweites Date."
             },
             {
                 variantId: "speed_dating_03",
@@ -112,8 +112,8 @@ const taskGroups = [
                     ]
                 },
                 correctAnswer: "Ja, zum zweiten Date",
-                explanationIfCorrect: "[PLATZHALTER]",
-                explanationIfWrong: "[PLATZHALTER]"
+                explanationIfCorrect: "Die Frau bewertet den Mann durchgehend mit 7 bis 9 Punkten, er sie mehrfach sogar mit 9 bis 10. Das spricht klar für ein zweites Date.",
+                explanationIfWrong: "Der Mann bewertet die Attraktivität der Frau nur mit 6 und ihre Ambition sogar nur mit 4 Punkten. Das spricht klar gegen ein zweites Date."
             },
             {
                 variantId: "speed_dating_06",
@@ -138,8 +138,8 @@ const taskGroups = [
                     ]
                 },
                 correctAnswer: "Nein, kein zweites Date",
-                explanationIfCorrect: "[PLATZHALTER]",
-                explanationIfWrong: "[PLATZHALTER]"
+                explanationIfCorrect: "Die Frau bewertet die Attraktivität des Mannes nur mit 5 Punkten, und ihre Freizeitgewohnheiten gehen weit auseinander. Das spricht klar gegen ein zweites Date.",
+                explanationIfWrong: "Der Mann gibt der Frau für Intelligenz die Höchstwertung 10, und beide bewerten Aufrichtigkeit und Ambition mit 7 bis 8. Das spricht klar für ein zweites Date."
             },
             {
                 variantId: "speed_dating_09",
@@ -164,8 +164,8 @@ const taskGroups = [
                     ]
                 },
                 correctAnswer: "Nein, kein zweites Date",
-                explanationIfCorrect: "[PLATZHALTER]",
-                explanationIfWrong: "[PLATZHALTER]"
+                explanationIfCorrect: "Der Mann bewertet die Attraktivität der Frau nur mit 4 Punkten, dem niedrigsten Wert der Tabelle. Das spricht klar gegen ein zweites Date.",
+                explanationIfWrong: "Die Frau findet den Mann mit 8 Punkten attraktiv, er schätzt ihre Aufrichtigkeit mit 8, und beide sind fast gleich alt. Das spricht klar für ein zweites Date."
             }
         ]
     },
@@ -208,8 +208,8 @@ const taskGroups = [
                     "Lage direkt an einer U-Bahn-Station. Perfekt. Waschmaschinen und Trockner vorhanden. " +
                     "Gutes Frühstück, guter Concierge. Danke.",
                 correctAnswer: "von einem Menschen",
-                explanationIfCorrect: "[PLATZHALTER]",
-                explanationIfWrong: "[PLATZHALTER]"
+                explanationIfCorrect: "Der Text besteht aus knappen Fragmenten wie „Perfekt.“ und endet mit einem persönlichen „Danke.“. Das ist typisch für einen menschlichen Verfasser.",
+                explanationIfWrong: "Der Text hakt Lage, Ausstattung, Frühstück und Concierge der Reihe nach ab, ohne ein Erlebnis zu schildern. Das ist typisch für KI-generierte Texte."
             },
             {
                 variantId: "hotel_review_04",
@@ -220,8 +220,8 @@ const taskGroups = [
                     "Große Zimmer modern eingerichtet. 10-15min zu Fuß beim Weißen Haus. " +
                     "Supermarkt nur 1 Straße weiter entfernt.",
                 correctAnswer: "von einem Menschen",
-                explanationIfCorrect: "[PLATZHALTER]",
-                explanationIfWrong: "[PLATZHALTER]"
+                explanationIfCorrect: "Der Text enthält kleine Unebenheiten wie „zu Fuß beim Weißen Haus“ und praktische Alltagsdetails. Das ist typisch für einen menschlichen Verfasser.",
+                explanationIfWrong: "Der Text handelt in drei gleich gebauten Kurzsätzen Zimmer, Lage und Umgebung ab, ganz ohne persönliche Wertung. Das ist typisch für KI-generierte Texte."
             },
             {
                 variantId: "hotel_review_06",
@@ -235,8 +235,8 @@ const taskGroups = [
                     "Leider war das Zimmer, in dem wir untergebracht waren, sehr klein und das Bad war veraltet. " +
                     "Außerdem war das Frühstück einfach und der Service war oft unterdurchschnittlich.",
                 correctAnswer: "KI-generiert",
-                explanationIfCorrect: "[PLATZHALTER]",
-                explanationIfWrong: "[PLATZHALTER]"
+                explanationIfCorrect: "Der Text nennt den vollen Hotelnamen und formuliert Lob und Kritik auffallend gleichmäßig und glatt. Das ist typisch für KI-generierte Texte.",
+                explanationIfWrong: "Der Text schildert mit „das Zimmer, in dem wir untergebracht waren“ einen persönlichen Aufenthalt samt veraltetem Bad. Das ist typisch für einen menschlichen Verfasser."
             },
             {
                 variantId: "hotel_review_10",
@@ -248,8 +248,8 @@ const taskGroups = [
                     "Negativ:\n\n" +
                     "Die Wände sind ein wenig dünn. Man hört das Nachbarzimmer.",
                 correctAnswer: "von einem Menschen",
-                explanationIfCorrect: "[PLATZHALTER]",
-                explanationIfWrong: "[PLATZHALTER]"
+                explanationIfCorrect: "Die Kritik ist kurz und alltagsnah formuliert: „Man hört das Nachbarzimmer.“ Das ist typisch für einen menschlichen Verfasser.",
+                explanationIfWrong: "Der Text reiht Standardlob wie „überaus freundliches Personal“ und „sauberes, geräumiges Zimmer“ aneinander. Das ist typisch für KI-generierte Texte."
             },
             {
                 variantId: "hotel_review_12",
@@ -262,8 +262,8 @@ const taskGroups = [
                     "Negativ:\n\n" +
                     "Die Außenlärmbelastung war manchmal störend, insbesondere während der Stoßzeiten.",
                 correctAnswer: "KI-generiert",
-                explanationIfCorrect: "[PLATZHALTER]",
-                explanationIfWrong: "[PLATZHALTER]"
+                explanationIfCorrect: "Der Text handelt Personal, Zimmer und Frühstück in einem gleichmäßigen Satz ab und formuliert die Kritik auffallend sachlich. Das ist typisch für KI-generierte Texte.",
+                explanationIfWrong: "Die Kritik am Außenlärm während der Stoßzeiten beschreibt ein konkretes Ärgernis vor Ort. Das ist typisch für einen menschlichen Verfasser."
             }
         ]
     },
@@ -299,36 +299,36 @@ const taskGroups = [
                 variantId: "emotion_01",
                 image: "images/emot-1.png",
                 correctAnswer: "Wut",
-                explanationIfCorrect: "[PLATZHALTER]",
-                explanationIfWrong: "[PLATZHALTER]"
+                explanationIfCorrect: "Die Augenbrauen sind leicht zusammengezogen, der Blick ist direkt auf das Gegenüber gerichtet und der Mund ist angespannt geöffnet. Diese Kombination ist typisch für Wut.",
+                explanationIfWrong: "Der Mund ist geöffnet und der Blick ist aufmerksam nach vorn gerichtet, als hätte die Person gerade etwas Unerwartetes gehört. Diese Kombination ist typisch für Überraschung."
             },
             {
                 variantId: "emotion_03",
                 image: "images/emot-3.png",
                 correctAnswer: "Wut",
-                explanationIfCorrect: "[PLATZHALTER]",
-                explanationIfWrong: "[PLATZHALTER]"
+                explanationIfCorrect: "Der Mund ist weit geöffnet, die Zähne sind deutlich sichtbar und der Blick ist starr und intensiv nach vorn gerichtet. Diese Kombination ist typisch für Wut.",
+                explanationIfWrong: "Die Augen sind weit aufgerissen und der Mund steht weit offen, als hätte die Person gerade etwas Unerwartetes gesehen. Diese Kombination ist typisch für Überraschung."
             },
             {
                 variantId: "emotion_04",
                 image: "images/emot-4.png",
                 correctAnswer: "Wut",
-                explanationIfCorrect: "[PLATZHALTER]",
-                explanationIfWrong: "[PLATZHALTER]"
+                explanationIfCorrect: "Die Oberlippe ist angespannt hochgezogen, die Zähne sind sichtbar und der Blick ist intensiv auf das Gegenüber gerichtet. Diese Kombination ist typisch für Wut.",
+                explanationIfWrong: "Die Augen sind weit aufgerissen, die Augenbrauen sind angehoben und der Mund steht offen. Diese Kombination ist typisch für Überraschung."
             },
             {
                 variantId: "emotion_08",
                 image: "images/emot-8.png",
                 correctAnswer: "Überraschung",
-                explanationIfCorrect: "[PLATZHALTER]",
-                explanationIfWrong: "[PLATZHALTER]"
+                explanationIfCorrect: "Der Mund ist leicht rund geöffnet, während Stirn und Augenbrauen entspannt bleiben. Diese Kombination ist typisch für Überraschung.",
+                explanationIfWrong: "Die Augen sind leicht verengt und der Blick ist ernst und fixierend, während der Mund zum Sprechen geöffnet ist. Diese Kombination ist typisch für Wut."
             },
             {
                 variantId: "emotion_09",
                 image: "images/emot-9.png",
                 correctAnswer: "Überraschung",
-                explanationIfCorrect: "[PLATZHALTER]",
-                explanationIfWrong: "[PLATZHALTER]"
+                explanationIfCorrect: "Der Mund ist geöffnet, die Augenbrauen sind angehoben und der Blick wendet sich plötzlich zur Seite. Diese Kombination ist typisch für Überraschung.",
+                explanationIfWrong: "Die Oberlippe ist angespannt, die Zähne sind sichtbar und der Blick ist scharf zur Seite gerichtet. Diese Kombination ist typisch für Wut."
             }
         ]
     },
@@ -374,8 +374,8 @@ const taskGroups = [
                     ]
                 },
                 correctAnswer: "mehr als 550.000€",
-                explanationIfCorrect: "[PLATZHALTER]",
-                explanationIfWrong: "[PLATZHALTER]"
+                explanationIfCorrect: "Das Haus bietet über 120 m² Wohnfläche auf 513 m² Grundstück in begehrter Hamburger Lage. Daher liegt der Preis über 550.000 €.",
+                explanationIfWrong: "Das Haus stammt aus dem Jahr 1957, sodass trotz Pflege Modernisierungen anstehen, die den Preis drücken. Daher liegt der Preis unter 550.000 €."
             },
             {
                 variantId: "real_estate_04",
@@ -392,8 +392,8 @@ const taskGroups = [
                     ]
                 },
                 correctAnswer: "weniger als 550.000€",
-                explanationIfCorrect: "[PLATZHALTER]",
-                explanationIfWrong: "[PLATZHALTER]"
+                explanationIfCorrect: "Laut Titel ist es ein kleines Reihenmittelhaus mit nur 84 m² Wohnfläche aus dem Jahr 1957. Daher liegt der Preis unter 550.000 €.",
+                explanationIfWrong: "Das Haus liegt in der Großstadt Düsseldorf und bietet 4 Zimmer, eine eigene Garage und rund 290 m² Grundstück. Daher liegt der Preis über 550.000 €."
             },
             {
                 variantId: "real_estate_06",
@@ -410,8 +410,8 @@ const taskGroups = [
                     ]
                 },
                 correctAnswer: "mehr als 550.000€",
-                explanationIfCorrect: "[PLATZHALTER]",
-                explanationIfWrong: "[PLATZHALTER]"
+                explanationIfCorrect: "Das Haus ist exklusiv saniert, hat Indoor-Pool, Wellnessbereich und 276 m² Wohnfläche. Daher liegt der Preis über 550.000 €.",
+                explanationIfWrong: "Das Haus stammt von 1972, und Indoor-Pool und Wellnessbereich bringen hohe laufende Kosten mit sich, die Käufer abschrecken. Daher liegt der Preis unter 550.000 €."
             },
             {
                 variantId: "real_estate_07",
@@ -428,8 +428,8 @@ const taskGroups = [
                     ]
                 },
                 correctAnswer: "weniger als 550.000€",
-                explanationIfCorrect: "[PLATZHALTER]",
-                explanationIfWrong: "[PLATZHALTER]"
+                explanationIfCorrect: "Das Haus hat nur 93 m² Wohnfläche, ein winziges Grundstück von 36 m² und stammt von 1600. Daher liegt der Preis unter 550.000 €.",
+                explanationIfWrong: "Das Haus ist ein historisches Unikat von 1600 mitten in der Lübecker Altstadt, laut Titel mit ganz besonderem Flair. Daher liegt der Preis über 550.000 €."
             },
             {
                 variantId: "real_estate_09",
@@ -446,8 +446,8 @@ const taskGroups = [
                     ]
                 },
                 correctAnswer: "mehr als 550.000€",
-                explanationIfCorrect: "[PLATZHALTER]",
-                explanationIfWrong: "[PLATZHALTER]"
+                explanationIfCorrect: "Das Haus liegt laut Titel in bester, ruhiger Lage in München und bietet Garten, Balkon und Terrasse. Daher liegt der Preis über 550.000 €.",
+                explanationIfWrong: "Das Haus bietet nur 3 Zimmer auf 77 m² Wohnfläche und ein Grundstück von 196 m². Daher liegt der Preis unter 550.000 €."
             }
         ]
     },
@@ -492,8 +492,8 @@ const taskGroups = [
                     ]
                 },
                 correctAnswer: "Regen",
-                explanationIfCorrect: "[PLATZHALTER]",
-                explanationIfWrong: "[PLATZHALTER]"
+                explanationIfCorrect: "Mit nur 1 Sonnenstunde war es fast ganztägig bedeckt, und in den drei Vortagen fielen bereits 3,1 mm Niederschlag. Daher hat es geregnet.",
+                explanationIfWrong: "In den drei Vortagen fielen nur 3,1 mm Niederschlag, die Wetterlage war also überwiegend trocken. Daher hat es nicht geregnet."
             },
             {
                 variantId: "rain_forecast_02",
@@ -507,8 +507,8 @@ const taskGroups = [
                     ]
                 },
                 correctAnswer: "Regen",
-                explanationIfCorrect: "[PLATZHALTER]",
-                explanationIfWrong: "[PLATZHALTER]"
+                explanationIfCorrect: "Es gab keine einzige Sonnenstunde, und in den drei Vortagen fielen bereits 8,5 mm Niederschlag. Daher hat es geregnet.",
+                explanationIfWrong: "Bei 0,4 °C lag die Temperatur nahe am Gefrierpunkt, sodass Niederschlag als Schnee statt als Regen fällt. Daher hat es nicht geregnet."
             },
             {
                 variantId: "rain_forecast_06",
@@ -522,8 +522,8 @@ const taskGroups = [
                     ]
                 },
                 correctAnswer: "Kein Regen",
-                explanationIfCorrect: "[PLATZHALTER]",
-                explanationIfWrong: "[PLATZHALTER]"
+                explanationIfCorrect: "Mit 13,6 Sonnenstunden war es fast durchgehend sonnig, trotz Niederschlag in den Vortagen. Daher hat es nicht geregnet.",
+                explanationIfWrong: "In den drei Vortagen fielen bereits 14,2 mm Niederschlag, und mit 13,8 °C blieb es für Juni kühl und unbeständig. Daher hat es geregnet."
             },
             {
                 variantId: "rain_forecast_08",
@@ -537,8 +537,8 @@ const taskGroups = [
                     ]
                 },
                 correctAnswer: "Kein Regen",
-                explanationIfCorrect: "[PLATZHALTER]",
-                explanationIfWrong: "[PLATZHALTER]"
+                explanationIfCorrect: "Mit 10,7 Sonnenstunden und 19,5 °C war es ein überwiegend sonniger, warmer Sommertag. Daher hat es nicht geregnet.",
+                explanationIfWrong: "In den drei Vortagen fielen bereits 10,1 mm Niederschlag, die Wetterlage war also feucht und wechselhaft. Daher hat es geregnet."
             },
             {
                 variantId: "rain_forecast_11",
@@ -552,8 +552,8 @@ const taskGroups = [
                     ]
                 },
                 correctAnswer: "Kein Regen",
-                explanationIfCorrect: "[PLATZHALTER]",
-                explanationIfWrong: "[PLATZHALTER]"
+                explanationIfCorrect: "In den drei Vortagen fiel kein Niederschlag, die Wetterlage war also stabil und trocken. Daher hat es nicht geregnet.",
+                explanationIfWrong: "Mit nur 1,3 Sonnenstunden war der Himmel fast den ganzen Tag dicht bedeckt, bei kühlen 14,5 °C. Daher hat es geregnet."
             }
         ]
     }
