@@ -1,10 +1,8 @@
-/* ==========================================================
-   Taskgruppen (5 Themen à 5-10 Varianten)
-   ==========================================================
-
-   Jede Gruppe enthält die gruppenweiten Angaben (Frage,
-   Instruktionstext, Antwortoptionen) und ihren Varianten mit
-   den eigentlichen Daten (u.a. der richtigen Antwort). */
+/* 5 Taskgruppen (mit je 5 Varianten)
+   
+   Jede Gruppe hat eine feste Frage, Instruktion und Antwortoptionen.
+   Die Varianten einer Gruppe haben unterschiedliche konkrete Daten
+   und jeweils eine richtige Antwort. */
 
 const taskGroups = [
 
