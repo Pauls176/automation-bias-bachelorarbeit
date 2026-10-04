@@ -859,7 +859,7 @@ function showAIResponse() {
 
     message.className = "message bot-message";
 
-    let explanationHtml = "<p>Begründung: " + escapeHtml(task.aiExplanation) + "</p>";
+    let explanationHtml = "<p>" + escapeHtml(task.aiExplanation) + "</p>";
     
     message.innerHTML = `
 
