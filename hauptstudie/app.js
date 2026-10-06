@@ -282,8 +282,12 @@ const totalBlocks = taskGroups.length + 1;
 const ratingBlock = {
 
     label: "Einschätzung Mensch und KI",
-    // TODO: Platzhalter ändern
-    intro: "Intro Bewertungsblock"
+   
+    intro: "Sie haben nun eine Reihe von Aufgaben bearbeitet. Im folgenden Abschnitt interessiert uns " +
+    "Ihre persönliche Einschätzung: Wie gut können Menschen und wie gut können KI-Systeme Aufgaben dieser " +
+    "Art lösen? \n\n Bitte beziehen Sie sich jeweils auf den Aufgabentyp, den Sie bearbeitet haben, und nicht auf " +
+    "einzelne Aufgaben. Sie werden zur Erinnerung eine Beispielaufgabe jedes Aufgabenblocks sehen. \n\n Es gibt keine " +
+    "richtigen oder falschen Antworten, uns interessiert ausschließlich Ihre Einschätzung."
 };
 
 // Bewertungsblock in derselben Reihenfolge wie AUfgaben bauen
