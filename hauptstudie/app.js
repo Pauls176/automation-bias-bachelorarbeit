@@ -536,7 +536,7 @@ function renderTaskContent(content, container) {
         prompt
     );
 
-    /* Foto (kann zusätzlich zu einer Tabelle auftreten, z.B. Immobilien) */
+    /* Foto */
 
     if (content.image) {
 
@@ -907,9 +907,7 @@ function showAIResponse() {
 
 
 /* Antwortbuttons erzeugen */
-function createAnswerButtons(
-    options
-) {
+function createAnswerButtons(options) {
 
     const answerArea =
         document.getElementById(
@@ -955,7 +953,7 @@ async function handleAnswer(
     const task =
         tasks[currentTask];
 
-    // Erste und zweite Nutzerantwort (später mit KI-Empfehlung dazwischen)
+    // Erste und zweite Nutzerantwort (mit KI-Empfehlung dazwischen)
 
     if (!waitingForSecondAnswer) {
 
@@ -1412,7 +1410,7 @@ function markSliderTouched(slider) {
     updateRatingSubmitState();
 }
 
-/* Wenn beide Slider bewegt wurden, Button freigeben */
+/* Überprüfen, ob beide Slider bewegt wurden, dann Button freigeben */
 
 function updateRatingSubmitState() {
 
@@ -1558,12 +1556,19 @@ function showCompletion() {
     `;
 
 
-    document.getElementById(
-        "task-instruction"
-    ).textContent =
-        isTestMode ?
-            "(Testmodus – keine Weiterleitung.)" :
+    const instruction =
+        document.getElementById("task-instruction");
+
+    if (isTestMode) {
+
+        instruction.textContent =
+            "(Testmodus – keine Weiterleitung.)";
+
+    } else {
+
+        instruction.textContent =
             "Sie werden gleich für die restlichen Fragen zur Umfrage zurückgeleitet …";
+    }
 
 
     document.querySelector(
@@ -1574,15 +1579,12 @@ function showCompletion() {
 
     if (!isTestMode) {
 
+        const redirectUrl = EXIT_SURVEY_URL + "?id=" + encodeURIComponent(participantId);
+        
         setTimeout(
             () => {
 
-                window.location.href =
-                    EXIT_SURVEY_URL +
-                    "?id=" +
-                    encodeURIComponent(
-                        participantId
-                    );
+                window.location.href = redirectUrl;
             },
             EXIT_REDIRECT_DELAY_MS
         );
@@ -1590,8 +1592,7 @@ function showCompletion() {
 }
 
 
-/* Fehlerfall: Seite wurde ohne gültige Teilnehmer-ID aufgerufen
-   (z. B. direkter Aufruf statt über den Studienlink) */
+/* Fehler-Screen: Seite wurde ohne Teilnehmer-ID aufgerufen */
 
 function showMissingIdError() {
 
