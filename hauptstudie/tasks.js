@@ -10,8 +10,10 @@ const taskGroups = [
     {
         groupId: "speed_dating",
 
+        // wird als Aufgabentitel angezeigt
         groupLabel: "Speed-Dating-Partner",
 
+        // wird im Einleitungs-Screen des Blocks angezeigt
         groupIntro:
             "In diesem Aufgabenblock sehen Sie jeweils zwei Teilnehmer eines " +
             "Speed-Dating-Events. Es handelt sich um heterosexuelle Paarungen. Sie erhalten eine Tabelle " +
@@ -28,6 +30,7 @@ const taskGroups = [
             "Speed-Dating-Paar. Haben die beiden Personen " +
             "sich für ein zweites Date entschieden?",
 
+        // erste Chatnachricht
         instruction:
             "Was glauben Sie? Wird dieses Paar ein zweites Date haben?",
 
