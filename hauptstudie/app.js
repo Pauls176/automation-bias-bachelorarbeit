@@ -1,6 +1,6 @@
 
-/* Teilnehmer-ID: im Echtbetrieb kommt sie per ?id=... von LimeSurvey.
-   Testmodus hat ID = test */
+/* Teilnehmer-ID: kommt per URL-Parameter (?id=...) von LimeSurvey.
+   Testmodus hat ID=test */
 
 const urlParams =
     new URLSearchParams(window.location.search);
@@ -50,10 +50,8 @@ function shuffle(array) {
 /* Session-Aufgabenliste aufbauen:
    - Reihenfolge der Taskgruppen wird randomisiert
    - Reihenfolge der Task Varianten je Gruppe wird randomisiert
-   - groupOrder hält fest, an welcher Stelle eine Gruppe in
-     der randomisierten Reihenfolge durchlaufen wurde
-   - isFirstInGroup markiert die erste Aufgabe einer Gruppe,
-     vor der der Gruppen-Einleitungsbildschirm gezeigt wird */
+   - groupOrder = Reihenfolge der 5 Gruppen (nach Randomisierung)
+   - isFirstInGroup =  erste Aufgabe einer Gruppe (braucht vorher den Einleitungs-Screen) */
 
 function buildSessionTasks(groups) {
 
@@ -99,6 +97,8 @@ function buildSessionTasks(groups) {
 
                 aiExplanation = variant.explanationIfWrong;
             }
+
+            // Sammle Tasks mit ihren konkreten Feldern in sessionTasks[]
 
             sessionTasks.push({
 
@@ -333,7 +333,7 @@ function goToCurrentTask() {
     }
 }
 
-/* Einleitungsbildschirm für den gesamten Aufgabenteil anzeigen */
+/* Einleitungs-Screen für den gesamten Aufgabenteil anzeigen */
 
 function showStudyIntro() {
 
@@ -363,7 +363,7 @@ function showStudyIntro() {
         false;
 }
 
-/* Gruppen-Einleitungsbildschirm anzeigen */
+/* Gruppen-Einleitungs-Screen anzeigen */
 
 function showGroupIntro(task) {
 
@@ -1543,7 +1543,7 @@ function showCompletion() {
     document.getElementById(
         "task-title"
     ).textContent =
-        "Vielen Dank!";
+        "Aufgabenteil abgeschlossen";
 
 
     document.getElementById(
@@ -1562,8 +1562,8 @@ function showCompletion() {
         "task-instruction"
     ).textContent =
         isTestMode ?
-            "Vielen Dank für Ihre Teilnahme. (Testmodus – keine Weiterleitung.)" :
-            "Sie werden gleich zur Umfrage zurückgeleitet …";
+            "(Testmodus – keine Weiterleitung.)" :
+            "Sie werden gleich für die restlichen Fragen zur Umfrage zurückgeleitet …";
 
 
     document.querySelector(
