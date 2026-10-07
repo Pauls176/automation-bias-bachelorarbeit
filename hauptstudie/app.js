@@ -872,6 +872,12 @@ function showAIResponse() {
         true;
 
     enableAnswerButtons();
+
+    // Scrollen, sodass Antwortbuttons wieder sichtbar werden
+    document.querySelector(".answer-area").scrollIntoView({
+        behavior: "smooth",
+        block: "end"
+    });
 }
 
 
