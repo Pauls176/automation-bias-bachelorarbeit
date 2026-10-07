@@ -13,10 +13,10 @@ const supabaseClient =
     );
 
 
-/* LimeSurvey: Weiterleitung nach Ende des Prototyps */
+/* LimeSurvey: Weiterleitung nach Ende des Experimental-Teils */
 
 const EXIT_SURVEY_URL =
-    "https://studentische-umfragen.uni-hamburg.de/index.php/832672";
+    "https://studentische-umfragen.uni-hamburg.de/index.php/534182";
 
 const EXIT_REDIRECT_DELAY_MS =
     2000;
