@@ -4,9 +4,8 @@
 
 const urlParams =
     new URLSearchParams(window.location.search);
-
-const idFromUrl =
-    urlParams.get("id");
+const idFromUrl = urlParams.get("id");
+const sonaFromUrl = urlParams.get("sona");
 
 const isTestMode =
     location.hostname === "localhost" ||
@@ -1477,8 +1476,8 @@ function showCompletion() {
 
     if (!isTestMode) {
 
-        const redirectUrl = EXIT_SURVEY_URL + "?id=" + encodeURIComponent(participantId);
-        
+        const redirectUrl = EXIT_SURVEY_URL + "?id=" + encodeURIComponent(participantId) + "&sona=" + encodeURIComponent(sonaFromUrl || "");
+
         setTimeout(
             () => {
 
