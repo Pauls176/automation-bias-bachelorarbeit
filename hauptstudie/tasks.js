@@ -206,7 +206,7 @@ const taskGroups = [
                 variantId: "hotel_review_01",
                 hotelName: "Park Plaza Beijing Wangfujing",
                 location: "Peking, China",
-                information:
+                text:
                     "Positiv:\n\n" +
                     "Lage direkt an einer U-Bahn-Station. Perfekt. Waschmaschinen und Trockner vorhanden. " +
                     "Gutes Frühstück, guter Concierge. Danke.",
@@ -218,7 +218,7 @@ const taskGroups = [
                 variantId: "hotel_review_04",
                 hotelName: "Holiday Inn Washington-Central/White House",
                 location: "Washington D.C., USA",
-                information:
+                text:
                     "Positiv:\n\n" +
                     "Große Zimmer modern eingerichtet. 10-15min zu Fuß beim Weißen Haus. " +
                     "Supermarkt nur 1 Straße weiter entfernt.",
@@ -230,7 +230,7 @@ const taskGroups = [
                 variantId: "hotel_review_06",
                 hotelName: "Hotel Passy Eiffel",
                 location: "Paris, Frankreich",
-                information:
+                text:
                     "Positiv:\n\n" +
                     "Die Lage des Hotel Passy Eiffel in Paris ist hervorragend, nur wenige Gehminuten vom " +
                     "Eiffelturm entfernt. Das Personal ist höflich und die Zimmer sind sauber.\n\n" +
@@ -245,7 +245,7 @@ const taskGroups = [
                 variantId: "hotel_review_10",
                 hotelName: "New Park Hotel",
                 location: "Ankara, Türkei",
-                information:
+                text:
                     "Positiv:\n\n" +
                     "Überaus freundliches Personal und sehr sauberes, geräumiges Zimmer in zentraler Lage. \n\n" +
                     "Negativ:\n\n" +
@@ -258,7 +258,7 @@ const taskGroups = [
                 variantId: "hotel_review_12",
                 hotelName: "Hotel Cinnah",
                 location: "Ankara, Türkei",
-                information:
+                text:
                     "Positiv:\n\n" +
                     "Das Personal war sehr zuvorkommend, das Zimmer war sauber und modern eingerichtet " +
                     "und das Frühstück war reichlich. \n\n" +

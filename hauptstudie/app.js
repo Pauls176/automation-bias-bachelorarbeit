@@ -120,7 +120,7 @@ function buildSessionTasks(groups) {
                 table: variant.table,
                 table1: variant.table1,
                 table2: variant.table2,
-                information: variant.information,
+                text: variant.text,
                 hotelName: variant.hotelName,
                 location: variant.location,
 
@@ -603,7 +603,7 @@ function renderTaskContent(content, container) {
 
     /* Text */
 
-     if (content.information) {
+     if (content.text) {
 
         if (content.hotelName && content.location) {
 
@@ -628,7 +628,7 @@ function renderTaskContent(content, container) {
             "information-box";
 
         informationBox.textContent =
-            content.information;
+            content.text;
 
         container.appendChild(
             informationBox
@@ -1206,7 +1206,7 @@ function showRatingScreen() {
         table: exampleTask.table,
         table1: exampleTask.table1,
         table2: exampleTask.table2,
-        information: exampleTask.information,
+        text: exampleTask.text,
         hotelName: exampleTask.hotelName,
         location: exampleTask.location
     };
