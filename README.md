@@ -4,14 +4,14 @@ von: Pauline v. Petersdorff
 Dieses Repository beinhaltet eine Studienumgebung (als Online-Studie im Browser aufrufbar) zur Untersuchung von Automation Bias beim Bearbeiten verschiedener Aufgabentypen. Es gibt 5 Aufgabenblöcke (Speed-Dating, Immobilienpreise, Hotelrezensionen, Emotionserkennung, Wettervorhersage) mit binären Antwortoptionen.
 
 Aufbau:
-pilot/ beinhaltet die komplette Pilotstudie (durchgeführt im September) mit einer größeren Anzahl tasks, aber ohne KI-Interaktion
-hauptstudie/ beinhaltet die finale Version für die Bachelor-Studie mit 5x5 tasks, inklusive KI-Interaktion
-images/ beinhaltet (in beiden Projektordnern) die Bilder für die Aufgaben
-index.html ist die Seitenstruktur mit allen Sections die dynamisch ein- und ausgeblendet werden
-app.js beinhaltet die Session-Logik (Bau der randomisierten Aufgabenblöcke, Session-Speicherung, Durchlauf der Screens, Befüllen der html-Elemente, Verarbeiten der Nutzerantworten)
-tasks.js beinhaltet die Task-Inhalte (konkrete Daten jeder Aufgabe, Antwortoptionen, KI-Empfehlungen)
-config.js beinhaltet die Anbindungen an SupaBase (Datenbank zur Speicherung der Nutzerantworten) und Limesurvey (Weiterleitung an Fragebogen)
-style.css beinhaltet die Darstellung der html-Seite
+- pilot/ beinhaltet die komplette Pilotstudie (durchgeführt im September) mit einer größeren Anzahl tasks, aber ohne KI-Interaktion
+- hauptstudie/ beinhaltet die finale Version für die Bachelor-Studie mit 5x5 tasks, inklusive KI-Interaktion
+- images/ beinhaltet (in beiden Projektordnern) die Bilder für die Aufgaben
+- index.html ist die Seitenstruktur mit allen Sections die dynamisch ein- und ausgeblendet werden
+- app.js beinhaltet die Session-Logik (Bau der randomisierten Aufgabenblöcke, Session-Speicherung, Durchlauf der Screens, Befüllen der html-Elemente, Verarbeiten der Nutzerantworten)
+- tasks.js beinhaltet die Task-Inhalte (konkrete Daten jeder Aufgabe, Antwortoptionen, KI-Empfehlungen)
+- config.js beinhaltet die Anbindungen an SupaBase (Datenbank zur Speicherung der Nutzerantworten) und Limesurvey (Weiterleitung an Fragebogen)
+- style.css beinhaltet die Darstellung der html-Seite
 
 Ablauf:
 - Einstieg über LimeSurvey-Fragebogen-URL (beinhaltet als URL-Paramter eine Teilnehmer-ID, die zwingend notwendig ist)
