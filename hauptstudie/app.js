@@ -243,6 +243,47 @@ let inRatingBlock = false;
 
 let currentRating = 0;
 
+// Objekt "screens" enthält zu jedem Screens die einzublendenen Sections
+const screens = {
+
+    "study-intro-screen": ["study-intro-section"],
+
+    "group-intro-screen": ["group-intro-section"],
+
+    "task-screen": ["task-section", "chat-section"],
+
+    "rating-screen": ["rating-section"],
+
+    "info-screen": ["task-section"]
+};
+
+// nur die passenden Sections einer Ansicht anzeigen, alle anderen ausblenden
+function showHtmlSections(viewName) {
+
+    /* zuerst alle Sections ausblenden */
+
+    // alle Screens durchgehen
+    for (const screen in screens) {
+
+        // betroffene Sections durchgehen
+        for (const sectionId of screens[screen]) {
+            document.getElementById(sectionId).hidden = true;
+        }
+    }
+
+    /* gewünschte Sections des einen Screens wieder einblenden */
+
+    for (const sectionId of screens[viewName]) {
+
+       document.getElementById(sectionId).hidden = false;
+        
+    }
+
+    // bei jedem neuen Scren wieder nach oben Scrollen
+    window.scrollTo(0,0);
+
+}
+
 const storedProgress =
     loadStoredProgress();
 
@@ -337,30 +378,7 @@ function goToCurrentTask() {
 
 function showStudyIntro() {
 
-    document.getElementById(
-        "task-section"
-    ).hidden =
-        true;
-
-    document.getElementById(
-        "chat-section"
-    ).hidden =
-        true;
-
-    document.getElementById(
-        "rating-section"
-    ).hidden =
-        true;
-
-    document.getElementById(
-        "group-intro-section"
-    ).hidden =
-        true;
-
-    document.getElementById(
-        "study-intro-section"
-    ).hidden =
-        false;
+    showHtmlSections("study-intro-screen");
 }
 
 /* Gruppen-Einleitungs-Screen anzeigen */
@@ -382,30 +400,7 @@ function showGroupIntro(task) {
     ).textContent =
         task.groupIntro || "";
 
-    document.getElementById(
-        "study-intro-section"
-    ).hidden =
-        true;
-
-    document.getElementById(
-        "task-section"
-    ).hidden =
-        true;
-
-    document.getElementById(
-        "chat-section"
-    ).hidden =
-        true;
-
-    document.getElementById(
-        "rating-section"
-    ).hidden =
-        true;
-
-    document.getElementById(
-        "group-intro-section"
-    ).hidden =
-        false;
+    showHtmlSections("group-intro-screen");
 }
 
 /* Tabellen erzeugen */
@@ -659,32 +654,7 @@ function renderTask() {
     firstResponseTime = null;
     aiShownAt = null;
 
-    /* Aufgabenansicht zeigen, andere Ansichten ausblenden */
-
-    document.getElementById(
-        "study-intro-section"
-    ).hidden =
-        true;
-
-    document.getElementById(
-        "group-intro-section"
-    ).hidden =
-        true;
-
-    document.getElementById(
-        "task-section"
-    ).hidden =
-        false;
-
-    document.getElementById(
-        "chat-section"
-    ).hidden =
-        false;
-
-    document.getElementById(
-        "rating-section"
-    ).hidden =
-        true;
+    showHtmlSections("task-screen");
 
     /* Fortschrittsanzeige */
 
@@ -692,7 +662,6 @@ function renderTask() {
         "task-counter"
     ).textContent =
         `Block ${task.groupOrder} von ${totalBlocks}`;
-
 
     /* Titel */
 
@@ -1000,11 +969,6 @@ async function handleAnswer(
         
             advanceToNextTask();
 
-        window.scrollTo(
-            0,
-            0
-        );
-
     } catch (error) {
 
         console.error(
@@ -1197,32 +1161,8 @@ function startRatingBlock() {
     ).textContent =
         ratingBlock.intro;
 
-    // andere Ansichten ausblenden
-    
-    document.getElementById(
-        "study-intro-section"
-    ).hidden =
-        true;
-
-    document.getElementById(
-        "task-section"
-    ).hidden =
-        true;
-
-    document.getElementById(
-        "chat-section"
-    ).hidden =
-        true;
-
-    document.getElementById(
-        "rating-section"
-    ).hidden =
-        true;
-
-    document.getElementById(
-        "group-intro-section"
-    ).hidden =
-        false;
+    // Rating-Block ist auch ein Gruppen-Intro-Screen    
+    showHtmlSections("group-intro-screen");
 }
 
 /* Rating-Screen anzeigen */
@@ -1302,37 +1242,7 @@ function showRatingScreen() {
 
     resetRatingSliders();    
 
-    // andere Ansichten ausblenden
-
-    document.getElementById(
-        "study-intro-section"
-    ).hidden =
-        true;
-
-    document.getElementById(
-        "group-intro-section"
-    ).hidden =
-        true;
-
-    document.getElementById(
-        "task-section"
-    ).hidden =
-        true;
-
-    document.getElementById(
-        "chat-section"
-    ).hidden =
-        true;
-
-    document.getElementById(
-        "rating-section"
-    ).hidden =
-        false;
-
-    window.scrollTo(
-        0,
-        0
-    );
+    showHtmlSections("rating-screen");
 }
 
 /* Slider für Rating-Screen  */
@@ -1512,25 +1422,7 @@ function nextRating() {
 
 function showCompletion() {
 
-    document.getElementById(
-        "group-intro-section"
-    ).hidden =
-        true;
-
-    document.getElementById(
-        "rating-section"
-    ).hidden =
-        true;
-
-    document.getElementById(
-        "task-section"
-    ).hidden =
-        false;
-
-    document.getElementById(
-        "chat-section"
-    ).hidden =
-        true;
+    showHtmlSections("info-screen");
 
     document.getElementById(
         "task-counter"
@@ -1596,25 +1488,7 @@ function showCompletion() {
 
 function showMissingIdError() {
 
-    document.getElementById(
-        "group-intro-section"
-    ).hidden =
-        true;
-
-    document.getElementById(
-        "rating-section"
-    ).hidden =
-        true;
-
-    document.getElementById(
-        "task-section"
-    ).hidden =
-        false;
-    
-     document.getElementById(
-        "chat-section"
-    ).hidden =
-        true;
+    showHtmlSections("info-screen");
 
     document.getElementById(
         "task-counter"
