@@ -4,7 +4,7 @@ von: Pauline v. Petersdorff
 Dieses Repository beinhaltet eine Studienumgebung (als Online-Studie im Browser aufrufbar) zur Untersuchung von Automation Bias beim Bearbeiten verschiedener Aufgabentypen. Es gibt 5 Aufgabenblöcke (Speed-Dating, Immobilienpreise, Hotelrezensionen, Emotionserkennung, Wettervorhersage) mit binären Antwortoptionen.
 
 Aufbau:
-- pilot/ beinhaltet die komplette Pilotstudie (durchgeführt im September) mit einer größeren Anzahl tasks, aber ohne KI-Interaktion
+- pilot/ beinhaltet die komplette Pilotstudie mit einer größeren Anzahl tasks, aber ohne KI-Interaktion
 - hauptstudie/ beinhaltet die finale Version für die Bachelor-Studie mit 5x5 tasks, inklusive KI-Interaktion
 - images/ beinhaltet (in beiden Projektordnern) die Bilder für die Aufgaben
 - index.html ist die Seitenstruktur mit allen Sections die dynamisch ein- und ausgeblendet werden
