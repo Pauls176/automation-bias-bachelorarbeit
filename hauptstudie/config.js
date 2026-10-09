@@ -16,7 +16,7 @@ const supabaseClient =
 /* LimeSurvey: Weiterleitung nach Ende des Experimental-Teils */
 
 const EXIT_SURVEY_URL =
-    "https://studentische-umfragen.uni-hamburg.de/index.php/534182";
+    "https://studentische-umfragen.uni-hamburg.de/einschaetzungen-mit-ki-2";
 
 const EXIT_REDIRECT_DELAY_MS =
     2000;
